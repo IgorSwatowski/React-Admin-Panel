@@ -49,14 +49,14 @@ function MultilineTextFields() {
   return (
     <Container>
       <form>
-      <div style={{position: 'absolute', width: '806px', height: '58px', left: '459px', top: '67px'}}>
+      <div display="flex" justifyContent="center" alignItems="center">
       <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </Avatar>
-        </ListItemAvatar>
-        <div style={{display: 'flex', flexDirection: 'row'}}>
+        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
+          <ListItemAvatar style={{marginTop: '7px'}}>
+            <Avatar>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>
+            </Avatar>
+          </ListItemAvatar>
           <ListItemText primary="John Doe" secondary="Set up your VoipChurch presence" />
           <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', marginTop: '4px', color: '#2196F3', marginRight: '10px', marginLeft: '-130px'}}/>
           <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
@@ -68,7 +68,7 @@ function MultilineTextFields() {
               / Edit Profile
             </Link>
           </Breadcrumbs>
-          <div style={{width: '190px', marginTop: '12px', marginLeft: '200px'}}>
+          <div style={{width: '190px', marginTop: '12px', marginLeft: '174px'}}>
             <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
               <div style={{display: 'flex', flexDirection: 'row'}}>
                 <ListItemText secondary="Minutes used this billing cycle"/>
@@ -78,12 +78,15 @@ function MultilineTextFields() {
           <div style={{width: '100px', marginTop: '12px', opacity: '0.6'}}>
               <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
           </div>
-        </div>
+          </div>
       </ListItem>
       </div>
+      <div style={{position: 'absolute', marginLeft: '240px'}}>
+        <CollapseSidebarUserItems />
+      </div>
 
-      <div style={{position: 'absolute', width: '1156px', height: '58px', left: '-49px', top: '167px'}}>
-      <Box width="50%" style={{marginLeft: '720px'}}>
+      <div display="flex" justifyContent="center" alignItems="center">
+      <Box width="43%" style={{marginLeft: '440px'}}>
       <Paper variant="outlined" style={{padding: "60px"}}>
       <div>
         <TextField
@@ -158,9 +161,6 @@ function MultilineTextFields() {
       </Box>
       </div>
     </form>
-      <div style={{position: 'absolute', width: '202px', height: '48px', left: '471px', top: '167px'}}>
-        <CollapseSidebarUserItems />
-      </div>
     </Container>
   );
 }
