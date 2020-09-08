@@ -13,6 +13,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { positions } from '@material-ui/system';
+
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
 
@@ -51,7 +53,7 @@ function MultilineTextFields() {
       <form>
       <div display="flex" justifyContent="center" alignItems="center">
       <ListItem>
-        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
+        <Box display="flex" flexDirection="row" ml={25}>
           <ListItemAvatar style={{marginTop: '7px'}}>
             <Avatar>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>
@@ -68,27 +70,29 @@ function MultilineTextFields() {
               / Edit Profile
             </Link>
           </Breadcrumbs>
-          <div style={{width: '190px', marginTop: '12px', marginLeft: '174px'}}>
+          <Box width="190px" ml={22} mt={2}>
             <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
-              <div style={{display: 'flex', flexDirection: 'row'}}>
+              <Box display="flex" flexDirection="row">
                 <ListItemText secondary="Minutes used this billing cycle"/>
                 <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
-              </div>
-          </div>
-          <div style={{width: '100px', marginTop: '12px', opacity: '0.6'}}>
+              </Box>
+          </Box>
+          <Box width='100px' mt={2} style={{opacity: '0.6'}}>
               <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
-          </div>
-          </div>
+          </Box>
+          </Box>
       </ListItem>
       </div>
-      <div style={{position: 'absolute', marginLeft: '240px'}}>
+
+      
+      <Box mt={-1} ml={32} position="absolute">
         <CollapseSidebarUserItems />
-      </div>
+      </Box>
 
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="43%" style={{marginLeft: '440px'}}>
+      <Box width="43%" ml={54.5}>
       <Paper variant="outlined" style={{padding: "60px"}}>
-      <div>
+      <Box>
         <TextField
           id="outlined-multiline-flexible"
           label="First Name"
@@ -99,8 +103,8 @@ function MultilineTextFields() {
           variant="outlined"
           style={{width: '300px'}}
         />
-      </div>
-      <div style={{marginTop: "30px"}}>
+      </Box>
+      <Box mt={5}>
         <TextField
           id="outlined-multiline-flexible"
           label="Last Name"
@@ -111,8 +115,8 @@ function MultilineTextFields() {
           variant="outlined"
           style={{width: '300px'}}
         />
-      </div>
-      <div style={{marginTop: "30px"}}>
+      </Box>
+      <Box mt={5}>
         <TextField
           id="outlined-multiline-flexible"
           label="Email"
@@ -123,8 +127,8 @@ function MultilineTextFields() {
           variant="outlined"
           style={{width: '300px'}}
         />
-      </div>
-      <div style={{marginTop: "30px"}}>
+      </Box>
+      <Box mt={5}>
         <TextField
           id="outlined-multiline-flexible"
           label="Mobile phone"
@@ -135,8 +139,8 @@ function MultilineTextFields() {
           variant="outlined"
           style={{width: '300px'}}
         />
-      </div>
-      <div style={{marginTop: '30px'}}>
+      </Box>
+      <Box mt={5}>
         <TextField
             id="outlined-select-country"
             select
@@ -151,12 +155,12 @@ function MultilineTextFields() {
               </MenuItem>
             ))}
         </TextField>
-      </div>
-      <div style={{marginTop: "30px"}}>
+      </Box>
+      <Box mt={5}>
       <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
         Save profile
       </Button>
-      </div>
+      </Box>
       </Paper>
       </Box>
       </div>
