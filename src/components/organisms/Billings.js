@@ -70,8 +70,9 @@ function Billings() {
     <Container 
       maxWidth='lg'>
       <form>
-      <div style={{position: 'absolute', width: '806px', height: '58px', left: '459px', top: '67px'}}>
-      <ListItem>
+      <div display="flex" justifyContent="center" alignItems="center">
+        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
+        <ListItem>
         <ListItemAvatar>
           <Avatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -92,9 +93,14 @@ function Billings() {
         </div>
       </ListItem>
       </div>
-      
-      <div style={{position: 'absolute', width: '1156px', height: '58px', left: '-49px', top: '167px'}}>
-      <Box width="50%" style={{marginLeft: '720px'}}>
+      </div>
+
+      <div style={{position: 'absolute', marginLeft: '240px'}}>
+        <CollapseSidebarUserItems />
+      </div>
+
+      <div display="flex" justifyContent="center" alignItems="center">
+      <Box width="45%" style={{marginLeft: '440px'}}>
       <Paper variant="outlined" style={{padding: "60px"}}>
           <ListItemText>Your Plan</ListItemText>
             <ListSubheader style={{marginTop: '-40px', marginLeft: '310px'}}>
@@ -122,10 +128,6 @@ function Billings() {
       <PaymentHistory/>
       </div>
     </form>
-    <div style={{position: 'absolute', width: '202px', height: '48px', left: '471px', top: '167px'}}>
-        <CollapseSidebarUserItems />
-    </div>
-
     </Container>
   );
 }

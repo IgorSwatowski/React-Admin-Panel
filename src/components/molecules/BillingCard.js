@@ -87,8 +87,9 @@ function CardBilling() {
   return (
     <Container 
       maxWidth='lg'>
-      <div style={{position: 'absolute', width: '806px', height: '58px', left: '459px', top: '67px'}}>
+      <div display="flex" justifyContent="center" alignItems="center">
       <ListItem>
+        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
         <ListItemAvatar>
           <Avatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -112,11 +113,17 @@ function CardBilling() {
             </Typography>
           </Breadcrumbs>
         </div>
+        </div>
       </ListItem>
       </div>
+
+      <div style={{position: 'absolute', marginLeft: '240px'}}>
+        <CollapseSidebarUserItems />
+      </div>
+
       <form>
-      <div style={{position: 'absolute', width: '1156px', height: '58px', left: '-49px', top: '167px'}}>
-      <Box width="50%" style={{marginLeft: '720px'}}>
+      <div display="flex" justifyContent="center" alignItems="center">
+      <Box width="43%" style={{marginLeft: '440px'}}>
       <Paper variant="outlined" style={{padding: "60px"}}>
           <ListItemText style={{position: 'static'}}>Credit Card</ListItemText>
           <ListSubheader style={{marginLeft: '-15px', width: '80%', position: 'static'}}>Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</ListSubheader>
@@ -269,10 +276,6 @@ function CardBilling() {
       </Box>
       </div>
       </form>
-      <div style={{position: 'absolute', width: '202px', height: '48px', left: '471px', top: '167px'}}>
-        <CollapseSidebarUserItems />
-      </div>
-
     </Container>
   );
 }
