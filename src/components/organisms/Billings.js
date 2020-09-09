@@ -3,7 +3,7 @@ import Avatar from "@material-ui/core/Avatar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import { makeStyles } from '@material-ui/core/styles';
 import {ListItemText} from "@material-ui/core";
-import { Link } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
@@ -84,8 +84,10 @@ function Billings() {
           <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
             <Link
                 onClick={handleClick}
-                style={{color: 'black', textDecoration: 'none'}}
+                color='textPrimary'
                 to="/billings"
+                underline='none'
+                component="button"
               >
               / Billing
             </Link>

@@ -2,7 +2,7 @@ import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import TextField from '@material-ui/core/TextField';
 import {ListItemText} from "@material-ui/core";
-import { Link } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
@@ -14,6 +14,8 @@ import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { positions } from '@material-ui/system';
+import Typography from '@material-ui/core/Typography';
+
 
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
@@ -54,7 +56,7 @@ function MultilineTextFields() {
       <div display="flex" justifyContent="center" alignItems="center">
       <ListItem>
         <Box display="flex" flexDirection="row" ml={25}>
-          <ListItemAvatar style={{marginTop: '7px'}}>
+          <ListItemAvatar>
             <Avatar>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>
             </Avatar>
@@ -64,8 +66,10 @@ function MultilineTextFields() {
           <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
             <Link
                 onClick={handleClick}
-                style={{color: 'black', textDecoration: 'none'}}
                 to="/profile"
+                color='textPrimary'
+                underline='none'
+                component="button"
               >
               / Edit Profile
             </Link>
