@@ -71,14 +71,14 @@ function Billings() {
       maxWidth='lg'>
       <form>
       <div display="flex" justifyContent="center" alignItems="center">
-        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
+        <Box display="flex" flexDirection="row" ml={25}>
         <ListItem>
         <ListItemAvatar>
           <Avatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
           </Avatar>
         </ListItemAvatar>
-        <div style={{display: 'flex', flexDirection: 'row'}}>
+        <Box display='flex' flexDirection='row'>
           <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" />
           <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', marginTop: '4px', color: '#2196F3', marginRight: '10px', marginLeft: '-200px'}}/>
           <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
@@ -90,31 +90,31 @@ function Billings() {
               / Billing
             </Link>
           </Breadcrumbs>
-        </div>
+        </Box>
       </ListItem>
-      </div>
+      </Box>
       </div>
 
-      <div style={{position: 'absolute', marginLeft: '240px'}}>
+      <Box mt={-1} ml={32} position="absolute">
         <CollapseSidebarUserItems />
-      </div>
+      </Box>
 
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="45%" style={{marginLeft: '440px'}}>
+      <Box width="45%" ml={54.5}>
       <Paper variant="outlined" style={{padding: "60px"}}>
           <ListItemText>Your Plan</ListItemText>
             <ListSubheader style={{marginTop: '-40px', marginLeft: '310px'}}>
               <Button className={classes.proVersionMember}>PRO</Button>
             </ListSubheader>
-            <div style={{width: '390px', marginTop: '12px'}}>
+            <Box width='390px' mt={2}>
             <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
-              <div style={{display: 'flex', flexDirection: 'row'}}>
+              <Box display='flex' flexDirection='row'>
                 <ListItemText secondary="Minutes used this billing cycle"/>
                 <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
-              </div>
-          </div>
-          <Button variant="outlined" style={{marginTop: '20px'}}>Change</Button>
-          <Button style={{marginTop: '20px', marginLeft: '20px'}}>Cancel Subscription</Button>
+              </Box>
+          </Box>
+          <Button variant="outlined">Change</Button>
+          <Button>Cancel Subscription</Button>
           <Divider style={{marginTop: '40px'}}/>
           <ListItemText style={{marginTop: '25px'}}>Payment</ListItemText>
           <ListSubheader style={{marginLeft: '-15px'}}>You can use a Credit Card or a bank Account.</ListSubheader>

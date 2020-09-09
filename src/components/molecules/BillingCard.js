@@ -89,13 +89,13 @@ function CardBilling() {
       maxWidth='lg'>
       <div display="flex" justifyContent="center" alignItems="center">
       <ListItem>
-        <div style={{display: 'flex', flexDirection: 'row', marginLeft: '204px'}}>
+        <Box display="flex" flexDirection="row" ml={25}>
         <ListItemAvatar>
           <Avatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
           </Avatar>
         </ListItemAvatar>
-        <div style={{display: 'flex', flexDirection: 'row'}}>
+        <Box display='flex' flexDirection='row'>
           <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" />
           <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', marginTop: '4px', color: '#2196F3', marginRight: '10px', marginLeft: '-200px'}}/>
           <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
@@ -112,18 +112,18 @@ function CardBilling() {
                Card
             </Typography>
           </Breadcrumbs>
-        </div>
-        </div>
+        </Box>
+        </Box>
       </ListItem>
       </div>
 
-      <div style={{position: 'absolute', marginLeft: '240px'}}>
+      <Box mt={-1} ml={32} position="absolute">
         <CollapseSidebarUserItems />
-      </div>
+      </Box>
 
       <form>
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="43%" style={{marginLeft: '440px'}}>
+      <Box width="43%" ml={54.5}>
       <Paper variant="outlined" style={{padding: "60px"}}>
           <ListItemText style={{position: 'static'}}>Credit Card</ListItemText>
           <ListSubheader style={{marginLeft: '-15px', width: '80%', position: 'static'}}>Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</ListSubheader>
@@ -202,12 +202,12 @@ function CardBilling() {
             </FormControl>
         </div>
 
-        <div style={{marginTop: '10px'}}>
+        <Box mt={1}>
                     <Divider/>
                     <ListItemText style={{marginTop: '20px'}}>Address</ListItemText>
                     <ListSubheader style={{marginLeft: '-15px'}}>Use a permament address where you can receive confirmation</ListSubheader>
-            </div>
-            <div style={{marginTop: "30px"}}>
+            </Box>
+            <Box mt={3}>
                 <TextField
                 id="outlined-multiline-flexible"
                 label="Street Address"
@@ -216,8 +216,8 @@ function CardBilling() {
                 variant="outlined"
                 style={{width: '400px'}}
                 />
-            </div>
-            <div style={{marginTop: "30px"}}>
+            </Box>
+            <Box mt={3}>
                 <TextField
                 id="outlined-multiline-flexible"
                 label="City"
@@ -226,8 +226,8 @@ function CardBilling() {
                 variant="outlined"
                 style={{width: '400px'}}
                 />
-            </div>
-            <div style={{marginTop: "30px"}}>
+            </Box>
+            <Box mt={3}>
                 <TextField
                 id="outlined-multiline-flexible"
                 label="State"
@@ -236,8 +236,8 @@ function CardBilling() {
                 variant="outlined"
                 style={{width: '400px'}}
                 />
-            </div>
-            <div className={classes.inlineItemsList} style={{marginTop: '30px'}}>
+            </Box>
+            <Box className={classes.inlineItemsList} mt={3}>
                 <TextField
                 id="outlined-multiline-flexible"
                 label="ZIP Code"
@@ -262,7 +262,7 @@ function CardBilling() {
                         </MenuItem>
                     ))}
                     </TextField>
-            </div>
+            </Box>
 
             <Button 
               variant="contained" 

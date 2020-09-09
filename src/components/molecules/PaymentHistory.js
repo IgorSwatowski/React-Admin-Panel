@@ -97,7 +97,7 @@ function PaymentHistory() {
 
   return (
       <div display="flex" justifyContent="center" alignItems="center">
-        <Box width="45%" style={{marginLeft: '440px', marginTop: '40px'}}>
+        <Box width="45%" ml={54.5} mt={3}>
         <Paper variant="outlined">
           <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
           <ListItemIcon style={{float: 'right', marginTop: '-40px'}}><GetAppIcon/></ListItemIcon>
