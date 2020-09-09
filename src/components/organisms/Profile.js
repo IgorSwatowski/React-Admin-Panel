@@ -14,9 +14,6 @@ import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { positions } from '@material-ui/system';
-import Typography from '@material-ui/core/Typography';
-
-
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
 
@@ -94,8 +91,7 @@ function MultilineTextFields() {
       </Box>
 
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="43%" ml={54.5}>
-      <Paper variant="outlined" style={{padding: "60px"}}>
+      <Box width="43%" ml={54.5} p={7} bgcolor="white">
       <Box>
         <TextField
           id="outlined-multiline-flexible"
@@ -165,7 +161,6 @@ function MultilineTextFields() {
         Save profile
       </Button>
       </Box>
-      </Paper>
       </Box>
       </div>
     </form>

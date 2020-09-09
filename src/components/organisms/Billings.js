@@ -102,8 +102,7 @@ function Billings() {
       </Box>
 
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="45%" ml={54.5}>
-      <Paper variant="outlined" style={{padding: "60px"}}>
+      <Box width="45%" ml={54.5} p={7} bgcolor="white">
           <ListItemText>Your Plan</ListItemText>
             <ListSubheader style={{marginTop: '-40px', marginLeft: '310px'}}>
               <Button className={classes.proVersionMember}>PRO</Button>
@@ -124,7 +123,6 @@ function Billings() {
           <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
           <Button variant="outlined" style={{marginTop: '20px'}} href="/card">Edit</Button>
           <Button style={{marginTop: '20px', marginLeft: '20px'}}>Remove</Button>
-      </Paper>
       </Box>
       
       <PaymentHistory/>

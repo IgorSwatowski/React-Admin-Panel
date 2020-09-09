@@ -127,8 +127,7 @@ function CardBilling() {
 
       <form>
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="43%" ml={54.5}>
-      <Paper variant="outlined" style={{padding: "60px"}}>
+      <Box width="43%" ml={54.5} p={7} bgcolor="white">
           <ListItemText style={{position: 'static'}}>Credit Card</ListItemText>
           <ListSubheader style={{marginLeft: '-15px', width: '80%', position: 'static'}}>Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</ListSubheader>
           <div style={{marginTop: "30px"}}>
@@ -276,7 +275,6 @@ function CardBilling() {
                 marginTop: '50px'
               }}>Save
             </Button>
-      </Paper>
       </Box>
       </div>
       </form>

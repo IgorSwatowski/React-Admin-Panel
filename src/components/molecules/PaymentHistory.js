@@ -97,58 +97,55 @@ function PaymentHistory() {
 
   return (
       <div display="flex" justifyContent="center" alignItems="center">
-        <Box width="45%" ml={54.5} mt={3}>
-        <Paper variant="outlined">
-          <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
-          <ListItemIcon style={{float: 'right', marginTop: '-40px'}}><GetAppIcon/></ListItemIcon>
+        <Box width="54%" ml={54.5} mt={3}>
           <TableContainer component={Paper}>
-      <Table size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell></TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Plan</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rowss.map((rowss) => (
-            <TableRow >
-              <TableCell>{rowss.status}</TableCell>
-              <TableCell>{rowss.date}</TableCell>
-              <TableCell>{rowss.amount}</TableCell>
-              <TableCell>{rowss.offer}</TableCell>
-              <TableCell>{rowss.PaymentMethod}</TableCell>
-              <TableCell>{rowss.receipt}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <List className={classes.inlineItemsList} style={{marginLeft: '160px'}}>
-            <ListSubheader>Rows per page</ListSubheader>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={rows}
-              onChange={handleRowsChange}
-            >
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={11}>11</MenuItem>
-              <MenuItem value={12}>12</MenuItem>
-              <MenuItem value={13}>13</MenuItem>
-            </Select>
-            <ListSubheader>1-3 of 13</ListSubheader>
-            <List>
-            <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
-            <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
-            </List>
-          </List>
+            <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
+            <ListItemIcon style={{float: 'right', marginTop: '-40px'}}><GetAppIcon/></ListItemIcon>
+              <Table size="small" aria-label="a dense table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell></TableCell>
+                    <TableCell>Date</TableCell>
+                    <TableCell>Amount</TableCell>
+                    <TableCell>Plan</TableCell>
+                    <TableCell>Payment Method</TableCell>
+                    <TableCell></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rowss.map((rowss) => (
+                  <TableRow >
+                    <TableCell>{rowss.status}</TableCell>
+                    <TableCell>{rowss.date}</TableCell>
+                    <TableCell>{rowss.amount}</TableCell>
+                    <TableCell>{rowss.offer}</TableCell>
+                    <TableCell>{rowss.PaymentMethod}</TableCell>
+                    <TableCell>{rowss.receipt}</TableCell>
+                  </TableRow>
+                  ))}
+                </TableBody>
+             </Table>
+            <List className={classes.inlineItemsList} style={{marginLeft: '160px'}}>
+                  <ListSubheader>Rows per page</ListSubheader>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={rows}
+                    onChange={handleRowsChange}
+                  >
+                    <MenuItem value={10}>10</MenuItem>
+                    <MenuItem value={11}>11</MenuItem>
+                    <MenuItem value={12}>12</MenuItem>
+                    <MenuItem value={13}>13</MenuItem>
+                  </Select>
+                  <ListSubheader>1-3 of 13</ListSubheader>
+                  <List>
+                  <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
+                  <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+                  </List>
+              </List>
 
-    </TableContainer>
-    
-        </Paper>
+          </TableContainer>
         </Box>
       </div>
   );
