@@ -5,7 +5,6 @@ import {ListItemText} from "@material-ui/core";
 import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -72,14 +71,14 @@ function MultilineTextFields() {
             </Link>
           </Breadcrumbs>
           <Box width="190px" ml={22} mt={2}>
-            <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
+            <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
               <Box display="flex" flexDirection="row">
                 <ListItemText secondary="Minutes used this billing cycle"/>
                 <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
               </Box>
           </Box>
           <Box width='100px' mt={2} style={{opacity: '0.6'}}>
-              <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
+              <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
           </Box>
           </Box>
       </ListItem>
@@ -92,7 +91,7 @@ function MultilineTextFields() {
 
       <div display="flex" justifyContent="center" alignItems="center">
       <Box width="43%" ml={54.5} p={7} bgcolor="white">
-      <Box>
+      <Box display='flex' justifyContent='center' alignItems='center'>
         <TextField
           id="outlined-multiline-flexible"
           label="First Name"
@@ -104,7 +103,7 @@ function MultilineTextFields() {
           style={{width: '300px'}}
         />
       </Box>
-      <Box mt={5}>
+      <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
         <TextField
           id="outlined-multiline-flexible"
           label="Last Name"
@@ -116,7 +115,7 @@ function MultilineTextFields() {
           style={{width: '300px'}}
         />
       </Box>
-      <Box mt={5}>
+      <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
         <TextField
           id="outlined-multiline-flexible"
           label="Email"
@@ -128,7 +127,7 @@ function MultilineTextFields() {
           style={{width: '300px'}}
         />
       </Box>
-      <Box mt={5}>
+      <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
         <TextField
           id="outlined-multiline-flexible"
           label="Mobile phone"
@@ -140,7 +139,7 @@ function MultilineTextFields() {
           style={{width: '300px'}}
         />
       </Box>
-      <Box mt={5}>
+      <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
         <TextField
             id="outlined-select-country"
             select
@@ -148,6 +147,7 @@ function MultilineTextFields() {
             value={country}
             onChange={handleChangeCountry}
             variant="outlined"
+            style={{width: '300px'}}
           >
             {countries.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -156,7 +156,7 @@ function MultilineTextFields() {
             ))}
         </TextField>
       </Box>
-      <Box mt={5}>
+      <Box mt={5} pl={14.4}>
       <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
         Save profile
       </Button>
