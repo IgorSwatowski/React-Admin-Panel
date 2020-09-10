@@ -31,19 +31,6 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
     }},
-    text: {
-      color: 'black',
-    },
-    blockList: {
-      display: 'block',
-      marginLeft: '-60px'
-    },
-    inlineItemsList: {
-      marginRight: '-100px',
-    },
-    styleIcons: {
-      marginTop: '-5px',
-    },
     proVersionMember: {
       background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
       color: '#0B79D0',
@@ -130,80 +117,81 @@ function CardBilling() {
       <Box width="43%" ml={54.5} p={7} bgcolor="white">
           <ListItemText style={{position: 'static'}}>Credit Card</ListItemText>
           <ListSubheader style={{marginLeft: '-15px', width: '80%', position: 'static'}}>Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</ListSubheader>
-          <div style={{marginTop: "30px"}}>
-            <TextField
-              id="outlined-multiline-flexible"
-              label="Account Holder"
-              multiline
-              value={allState.accountHolder}
-              rowsMax={4}
-              onChange={handleAccountHolder}
-              variant="outlined"
-              style={{width: '400px'}}
-            />
-          </div>
-
-
-          <FormControl fullWidth variant="outlined" style={{marginTop: '30px'}}>
-          <InputLabel htmlFor="outlined-adornment-month">Credit Card</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-month"
-            value={credit}
-            onChange={handleChangeCredit}
-            startAdornment={<CreditCardIcon style={{marginRight: '20px'}}></CreditCardIcon>}
-            labelWidth={90}
-            style={{width: '400px'}}
-          />
-        </FormControl>
-        
-        <div className={classes.inlineItemsList}>
-            <FormControl variant="outlined" style={{width: '130px', marginTop: '20px'}}>
-              <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
-              <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
-                value={month}
-                onChange={handleChangeMonth}
-                labelWidth={60}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={1}>January</MenuItem>
-                <MenuItem value={2}>February</MenuItem>
-                <MenuItem value={3}>March</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl variant="outlined" style={{width: '130px', marginTop: '20px', marginLeft: '20px'}}>
-              <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
-              <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
-                value={month}
-                onChange={handleChangeMonth}
-                labelWidth={60}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={1}>January</MenuItem>
-                <MenuItem value={2}>February</MenuItem>
-                <MenuItem value={3}>March</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl variant="outlined" style={{width: '130px', marginTop: '20px', marginRight: '260px'}}>
+            <Box mt={3}>
               <TextField
-              id="outlined-textarea"
-              label="CVV"
-              placeholder="CVV"
-              multiline
-              variant="outlined"
-              style={{width: '100px', marginTop: '-75px', marginLeft: '300px'}}
-            />
-            </FormControl>
-        </div>
+                id="outlined-multiline-flexible"
+                label="Account Holder"
+                multiline
+                value={allState.accountHolder}
+                rowsMax={4}
+                onChange={handleAccountHolder}
+                variant="outlined"
+                style={{width: '400px'}}
+              />
+            </Box>
+
+            <Box mt={3}>
+              <FormControl fullWidth variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-month">Credit Card</InputLabel>
+                  <OutlinedInput
+                    id="outlined-adornment-month"
+                    value={credit}
+                    onChange={handleChangeCredit}
+                    startAdornment={<CreditCardIcon style={{marginRight: '20px'}}></CreditCardIcon>}
+                    labelWidth={90}
+                    style={{width: '400px'}}
+                  />
+              </FormControl>
+            </Box>
+        
+            <Box mt={3}>
+              <FormControl variant="outlined" style={{width: '130px'}}>
+                <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-outlined"
+                    value={month}
+                    onChange={handleChangeMonth}
+                    labelWidth={60}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={1}>January</MenuItem>
+                    <MenuItem value={2}>February</MenuItem>
+                    <MenuItem value={3}>March</MenuItem>
+                  </Select>
+              </FormControl>
+
+              <FormControl variant="outlined" style={{width: '130px', marginLeft: '20px'}}>
+                <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-outlined"
+                    value={month}
+                    onChange={handleChangeMonth}
+                    labelWidth={60}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={1}>January</MenuItem>
+                    <MenuItem value={2}>February</MenuItem>
+                    <MenuItem value={3}>March</MenuItem>
+                  </Select>
+              </FormControl>
+
+              <FormControl variant="outlined" style={{width: '130px', marginTop: '20px', marginRight: '260px'}}>
+                <TextField
+                  id="outlined-textarea"
+                  label="CVV"
+                  placeholder="CVV"
+                  multiline
+                  variant="outlined"
+                  style={{width: '100px', marginTop: '-75px', marginLeft: '300px'}}
+                />
+              </FormControl>
+            </Box>
 
         <Box mt={1}>
                     <Divider/>
@@ -240,7 +228,7 @@ function CardBilling() {
                 style={{width: '400px'}}
                 />
             </Box>
-            <Box className={classes.inlineItemsList} mt={3}>
+            <Box mt={3}>
                 <TextField
                 id="outlined-multiline-flexible"
                 label="ZIP Code"
@@ -267,14 +255,11 @@ function CardBilling() {
                     </TextField>
             </Box>
 
-            <Button 
-              variant="contained" 
-              style={{
-                background: '#2196F3', 
-                color: "#fff", 
-                marginTop: '50px'
-              }}>Save
-            </Button>
+            <Box mt={5}>
+              <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
+                Save
+              </Button>
+            </Box>
       </Box>
       </div>
       </form>
