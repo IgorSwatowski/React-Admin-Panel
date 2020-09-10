@@ -14,6 +14,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
 
 
 import PaymentHistory from 'components/molecules/PaymentHistory.js';
@@ -102,27 +103,48 @@ function Billings() {
       </Box>
 
       <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="45%" ml={54.5} p={7} bgcolor="white">
+        <Box width="45%" ml={54.5} p={7} bgcolor="white">
           <ListItemText>Your Plan</ListItemText>
-            <ListSubheader style={{marginTop: '-40px', marginLeft: '310px'}}>
+
+          <Box mt={-5.5} ml={39}>
+          <ListSubheader>
               <Button className={classes.proVersionMember}>PRO</Button>
             </ListSubheader>
-            <Box width='390px' mt={2}>
-            <LinearProgress variant="determinate" style={{background: '#2196F3', opacity: '0.9'}}/>
+          </Box>
+
+          <Box width='390px' mt={2}>
+            <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
               <Box display='flex' flexDirection='row'>
                 <ListItemText secondary="Minutes used this billing cycle"/>
                 <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
               </Box>
           </Box>
-          <Button variant="outlined">Change</Button>
-          <Button>Cancel Subscription</Button>
-          <Divider style={{marginTop: '40px'}}/>
-          <ListItemText style={{marginTop: '25px'}}>Payment</ListItemText>
-          <ListSubheader style={{marginLeft: '-15px'}}>You can use a Credit Card or a bank Account.</ListSubheader>
-          <ListSubheader style={{marginLeft: '-15px', fontSize: '13px'}}>Payment Method on file</ListSubheader>
+
+          <Box mt={5}>
+            <Button variant="outlined">Change</Button>
+            <Button>Cancel Subscription</Button>
+          </Box>
+
+          <Box mt={5}>
+            <Divider/>
+          </Box>
+
+          <Box mt={6}>
+            <ListItemText>Payment</ListItemText>
+            <Box mt={2}>
+              <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
+            </Box>
+            <Box mt={2} mb={2}>
+              <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+            </Box>
+          </Box>
+
           <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
-          <Button variant="outlined" style={{marginTop: '20px'}} href="/card">Edit</Button>
-          <Button style={{marginTop: '20px', marginLeft: '20px'}}>Remove</Button>
+
+          <Box mt={3}>
+            <Button variant="outlined" href="/card">Edit</Button>
+              <Button>Remove</Button>
+          </Box>
       </Box>
       
       <PaymentHistory/>
