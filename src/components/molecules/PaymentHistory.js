@@ -30,21 +30,6 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
     },
-  text: {
-    color: 'black',
-  },
-  },
-  blockList: {
-    display: 'block',
-    marginLeft: '-60px'
-  },
-  inlineItemsList: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap'
-  },
-  styleIcons: {
-    marginTop: '-5px',
   },
   proVersionMember: {
     background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
@@ -125,7 +110,7 @@ function PaymentHistory() {
                   ))}
                 </TableBody>
              </Table>
-            <List className={classes.inlineItemsList} style={{marginLeft: '160px'}}>
+            <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={36}>
                   <ListSubheader>Rows per page</ListSubheader>
                   <Select
                     labelId="demo-simple-select-label"
@@ -140,10 +125,12 @@ function PaymentHistory() {
                   </Select>
                   <ListSubheader>1-3 of 13</ListSubheader>
                   <List>
-                  <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
-                  <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+                  <Box mt={0.4}>
+                    <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
+                    <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+                  </Box>
                   </List>
-              </List>
+              </Box>
 
           </TableContainer>
         </Box>
