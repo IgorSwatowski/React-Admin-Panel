@@ -65,7 +65,10 @@ function Billings() {
 
   const handleClick = event => event.preventDefault();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f593b36... Try to repair deploy site in Netlify
   return (
     <Container 
       maxWidth='lg'>
