@@ -12,7 +12,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { positions } from '@material-ui/system';
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
 
