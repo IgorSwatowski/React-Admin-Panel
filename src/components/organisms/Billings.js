@@ -6,7 +6,6 @@ import {ListItemText} from "@material-ui/core";
 import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';

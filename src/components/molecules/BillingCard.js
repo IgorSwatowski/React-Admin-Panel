@@ -1,13 +1,11 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import { makeStyles } from '@material-ui/core/styles';
 import {ListItemText} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
@@ -25,22 +23,7 @@ import TextField from '@material-ui/core/TextField';
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    }},
-    proVersionMember: {
-      background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
-      color: '#0B79D0',
-      borderRadius: '55px',
-      fontSize: '12px',
-    }
-}));
-
 function CardBilling() {
-  const classes = useStyles();
 
   const handleClick = event => event.preventDefault();
 
