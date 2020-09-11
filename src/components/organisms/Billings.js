@@ -9,8 +9,6 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
@@ -25,21 +23,6 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
     }},
-  text: {
-    color: 'black',
-  },
-  blockList: {
-    display: 'block',
-    marginLeft: '-60px'
-  },
-  inlineItemsList: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap'
-  },
-  styleIcons: {
-    marginTop: '-5px',
-  },
   proVersionMember: {
     background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
     color: '#0B79D0',
@@ -68,31 +51,34 @@ function Billings() {
     <Container 
       maxWidth='lg'>
       <form>
-      <div display="flex" justifyContent="center" alignItems="center">
-        <Box display="flex" flexDirection="row" ml={25}>
-        <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </Avatar>
-        </ListItemAvatar>
-        <Box display='flex' flexDirection='row'>
-          <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" />
-          <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', marginTop: '4px', color: '#2196F3', marginRight: '10px', marginLeft: '-200px'}}/>
-          <Breadcrumbs aria-label="breadcrumb" style={{marginTop: '5px'}}>
-            <Link
-                onClick={handleClick}
-                color='textPrimary'
-                to="/billings"
-                underline='none'
-                component="button"
-              >
-              / Billing
-            </Link>
-          </Breadcrumbs>
+      <div style={{ width: '100%' }}>
+        <Box display="flex" p={1}>
+          <Box p={1} order={1} mr={-26} ml={27} mt={1}>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
+          </Box>
+
+          <Box p={1} order={2} ml={26}>
+            <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" /> 
+          </Box>
+          
+          <Box p={1} order={3} mt={0.7} ml={-22}>
+            <Breadcrumbs aria-label="breadcrumb"> 
+              <Link 
+                  onClick={handleClick} 
+                  color="textPrimary"
+                  to="/billings" 
+                  underline='none' 
+                  component="button" 
+                > 
+                / Billings
+              </Link> 
+            </Breadcrumbs> 
+          </Box>
+
+          <Box p={1} order={4} mt={0.7} ml={-14}>
+             <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', color: '#2196F3'}}/>
+          </Box>
         </Box>
-      </ListItem>
-      </Box>
       </div>
 
       <Box mt={-1} ml={32} position="absolute">
