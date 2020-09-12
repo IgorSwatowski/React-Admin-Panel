@@ -81,7 +81,7 @@ function PaymentHistory() {
   ];
 
   return (
-      <div display="flex" justifyContent="center" alignItems="center">
+      <Box display="flex" justifyContent="center" alignItems="center">
         <Box width="54%" ml={54.5} mt={3}>
           <TableContainer component={Paper}>
             <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
@@ -134,7 +134,7 @@ function PaymentHistory() {
 
           </TableContainer>
         </Box>
-      </div>
+      </Box>
   );
 }
 

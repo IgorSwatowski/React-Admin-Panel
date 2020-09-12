@@ -9,7 +9,6 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
-import Chip from '@material-ui/core/Chip';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 
@@ -50,89 +49,91 @@ function Billings() {
   return (
     <Container 
       maxWidth='lg'>
-      <form>
-      <div style={{ width: '100%' }}>
+      <Box style={{ width: '100%' }}>
         <Box display="flex" p={1}>
-          <Box p={1} order={1} mr={-26} ml={27} mt={1}>
+          <Box p={1} order={1} mr={-34} ml={39} mt={1}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
           </Box>
 
-          <Box p={1} order={2} ml={26}>
-            <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" /> 
+          <Box p={1} order={2} ml={34}>
+            <Typography variant="h6">
+              John Doe
+            </Typography>
+            <Typography variant="body1" color="textSecondary">
+              Manage billing information and view receipts
+            </Typography>
           </Box>
           
-          <Box p={1} order={3} mt={0.7} ml={-22}>
+          <Box p={1} order={3} ml={-29.7}>
             <Breadcrumbs aria-label="breadcrumb"> 
               <Link 
                   onClick={handleClick} 
-                  color="textPrimary"
+                  color='textPrimary'
                   to="/billings" 
                   underline='none' 
-                  component="button" 
+                  component="button"
+                  variant="h6" 
                 > 
-                / Billings
-              </Link> 
+                / Billing
+              </Link>
             </Breadcrumbs> 
           </Box>
-
-          <Box p={1} order={4} mt={0.7} ml={-14}>
-             <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', color: '#2196F3'}}/>
-          </Box>
         </Box>
-      </div>
-
-      <Box mt={-1} ml={32} position="absolute">
-        <CollapseSidebarUserItems />
       </Box>
 
-      <div display="flex" justifyContent="center" alignItems="center">
-        <Box width="45%" ml={54.5} p={7} bgcolor="white">
-          <ListItemText>Your Plan</ListItemText>
 
-          <Box mt={-5.5} ml={39}>
-          <ListSubheader>
-              <Button className={classes.proVersionMember}>PRO</Button>
-            </ListSubheader>
-          </Box>
+      <form>
+        <Box order={1} display='flex' justifyContent="left" ml={40}>
+          <CollapseSidebarUserItems />
+        </Box> 
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <Box width="45%" ml={54.5} p={7} mt={-30} order={2} bgcolor="white">
+            <ListItemText>Your Plan</ListItemText>
 
-          <Box width='390px' mt={2}>
-            <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
-              <Box display='flex' flexDirection='row'>
-                <ListItemText secondary="Minutes used this billing cycle"/>
-                <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
+            <Box mt={-5.5} ml={39}>
+            <ListSubheader>
+                <Button className={classes.proVersionMember}>PRO</Button>
+              </ListSubheader>
+            </Box>
+
+            <Box width='390px' mt={2}>
+              <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                <Box display='flex' flexDirection='row'>
+                  <ListItemText secondary="Minutes used this billing cycle"/>
+                  <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
+                </Box>
+            </Box>
+
+            <Box mt={5}>
+              <Button variant="outlined">Change</Button>
+              <Button>Cancel Subscription</Button>
+            </Box>
+
+            <Box mt={5}>
+              <Divider/>
+            </Box>
+
+            <Box mt={6}>
+              <ListItemText>Payment</ListItemText>
+              <Box mt={2}>
+                <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
               </Box>
-          </Box>
-
-          <Box mt={5}>
-            <Button variant="outlined">Change</Button>
-            <Button>Cancel Subscription</Button>
-          </Box>
-
-          <Box mt={5}>
-            <Divider/>
-          </Box>
-
-          <Box mt={6}>
-            <ListItemText>Payment</ListItemText>
-            <Box mt={2}>
-              <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
+              <Box mt={2} mb={2}>
+                <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+              </Box>
             </Box>
-            <Box mt={2} mb={2}>
-              <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+
+            <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
+
+            <Box mt={3}>
+              <Button variant="outlined" href="/card">Edit</Button>
+                <Button>Remove</Button>
             </Box>
-          </Box>
-
-          <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
-
-          <Box mt={3}>
-            <Button variant="outlined" href="/card">Edit</Button>
-              <Button>Remove</Button>
-          </Box>
+        </Box>
       </Box>
-      
+
       <PaymentHistory/>
-      </div>
-    </form>
+      </form>
     </Container>
   );
 }
