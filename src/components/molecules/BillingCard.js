@@ -8,7 +8,6 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
-import Chip from '@material-ui/core/Chip';
 import MenuItem from '@material-ui/core/MenuItem';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import FormControl from '@material-ui/core/FormControl';
@@ -16,6 +15,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+
 
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
@@ -54,53 +55,59 @@ function CardBilling() {
   return (
     <Container 
       maxWidth='lg'>
-        <div style={{ width: '100%' }}>
+        <Box style={{ width: '100%' }}>
         <Box display="flex" p={1}>
-          <Box p={1} order={1} mr={-26} ml={27} mt={1}>
+          <Box p={1} order={1} mr={-34} ml={39} mt={1}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
           </Box>
 
-          <Box p={1} order={2} ml={26}>
-            <ListItemText primary="John Doe" secondary="Manage billing information and view receipts" /> 
+          <Box p={1} order={2} ml={34}>
+            <Typography variant="h6">
+              John Doe
+            </Typography>
+            <Typography variant="body1" color="textSecondary">
+              Add a card to your account
+            </Typography>
           </Box>
           
-          <Box p={1} order={3} mt={0.7} ml={-22}>
+          <Box p={1} order={3} ml={-14}>
             <Breadcrumbs aria-label="breadcrumb"> 
               <Link 
                   onClick={handleClick} 
                   style={{color: '#2196F3'}}
                   to="/billings" 
                   underline='none' 
-                  component="button" 
+                  component="button"
+                  variant="h6" 
                 > 
-                / Billings
+                / Billing
               </Link>
               <Link 
                   color="textPrimary"
                   to="/billings" 
                   underline='none' 
-                  component="button" 
+                  component="button"
+                  variant="h6"
                 >
                    Card
               </Link>
             </Breadcrumbs> 
           </Box>
-
-          <Box p={1} order={4} mt={0.7} ml={-20.5}>
-             <Chip size="small" label="PRO" style={{background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', color: '#2196F3'}}/>
-          </Box>
         </Box>
-      </div>
-
-      <Box mt={-1} ml={32} position="absolute">
-        <CollapseSidebarUserItems />
       </Box>
 
       <form>
-      <div display="flex" justifyContent="center" alignItems="center">
-      <Box width="43%" ml={54.5} p={7} bgcolor="white">
-          <ListItemText style={{position: 'static'}}>Credit Card</ListItemText>
-          <ListSubheader style={{marginLeft: '-15px', width: '80%', position: 'static'}}>Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</ListSubheader>
+      <Box order={1} display='flex' justifyContent="left" ml={40}>
+        <CollapseSidebarUserItems />
+      </Box> 
+      <Box display="flex" justifyContent="center" alignItems="center"> 
+      <Box width="43%" ml={54.5} p={7} mt={-30} bgcolor="white" order={2}>
+          <Typography variant="body1" color="textPrimary">
+            Credit Card
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account
+          </Typography>
             <Box mt={3}>
               <TextField
                 id="outlined-multiline-flexible"
@@ -245,7 +252,7 @@ function CardBilling() {
               </Button>
             </Box>
       </Box>
-      </div>
+      </Box>
       </form>
     </Container>
   );
