@@ -72,11 +72,11 @@ function Billings() {
                     component="button"
                     variant="h6" 
                   > 
-                  Edit Profile
+                  Billing
                 </Link>
               </Breadcrumbs>
               <Typography variant="body1" color="textSecondary">
-                Set up your VoipChurch presence
+                Manage billing information and view receipts
               </Typography>
             </Box>
           </Box>
