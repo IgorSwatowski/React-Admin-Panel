@@ -47,94 +47,93 @@ function Billings() {
 
   const handleClick = event => event.preventDefault();
   return (
-    <Container 
+      <Container 
       maxWidth='lg'>
-      <Box style={{ width: '100%' }}>
-        <Box display="flex" p={1}>
-          <Box p={1} order={1} mr={-34} ml={39} mt={1}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
-          </Box>
+        <Box display="flex" justifyContent="center">
+          <Box display="flex" p={1} flexGrow={1} ml={28}>
+            <Box p={1} mt={1}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
+            </Box>
 
-          <Box p={1} order={2} ml={34}>
-            <Typography variant="h6">
-              John Doe
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              Manage billing information and view receipts
-            </Typography>
-          </Box>
-          
-          <Box p={1} order={3} ml={-29.7}>
-            <Breadcrumbs aria-label="breadcrumb"> 
+            <Box p={1}>
+              <Breadcrumbs aria-label="breadcrumb">
               <Link 
-                  onClick={handleClick} 
-                  color='textPrimary'
-                  to="/billings" 
-                  underline='none' 
-                  component="button"
-                  variant="h6" 
-                > 
-                / Billing
-              </Link>
-            </Breadcrumbs> 
+                    color='textPrimary'
+                    underline='none' 
+                    variant="h6" 
+                  > 
+                  John Doe
+                </Link>
+              <Link 
+                    onClick={handleClick} 
+                    color='textPrimary'
+                    to="/billings" 
+                    underline='none' 
+                    component="button"
+                    variant="h6" 
+                  > 
+                  Edit Profile
+                </Link>
+              </Breadcrumbs>
+              <Typography variant="body1" color="textSecondary">
+                Set up your VoipChurch presence
+              </Typography>
+            </Box>
           </Box>
         </Box>
-      </Box>
 
+        <Box display="flex" justifyContent="center" mt={2}>
+          <Box display="flex" justifyContent="center" alignItems="center" mx="auto">
+          <Box mt={-43}>
+            <CollapseSidebarUserItems />
+          </Box> 
+            <Box width="500px" p={7} order={2} bgcolor="white">
+              <ListItemText>Your Plan</ListItemText>
+              <Box mt={-5.5} ml={39}>
+              <ListSubheader>
+                  <Button className={classes.proVersionMember}>PRO</Button>
+                </ListSubheader>
+              </Box>
 
-      <form>
-        <Box order={1} display='flex' justifyContent="left" ml={40}>
-          <CollapseSidebarUserItems />
-        </Box> 
-        <Box display="flex" justifyContent="center" alignItems="center">
-          <Box width="45%" ml={54.5} p={7} mt={-30} order={2} bgcolor="white">
-            <ListItemText>Your Plan</ListItemText>
+              <Box width='390px' mt={2}>
+                <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                  <Box display='flex' flexDirection='row'>
+                    <ListItemText secondary="Minutes used this billing cycle"/>
+                    <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
+                  </Box>
+              </Box>
 
-            <Box mt={-5.5} ml={39}>
-            <ListSubheader>
-                <Button className={classes.proVersionMember}>PRO</Button>
-              </ListSubheader>
-            </Box>
+              <Box mt={5}>
+                <Button variant="outlined">Change</Button>
+                <Button>Cancel Subscription</Button>
+              </Box>
 
-            <Box width='390px' mt={2}>
-              <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
-                <Box display='flex' flexDirection='row'>
-                  <ListItemText secondary="Minutes used this billing cycle"/>
-                  <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
+              <Box mt={5}>
+                <Divider/>
+              </Box>
+
+              <Box mt={6}>
+                <ListItemText>Payment</ListItemText>
+                <Box mt={2}>
+                  <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
                 </Box>
-            </Box>
-
-            <Box mt={5}>
-              <Button variant="outlined">Change</Button>
-              <Button>Cancel Subscription</Button>
-            </Box>
-
-            <Box mt={5}>
-              <Divider/>
-            </Box>
-
-            <Box mt={6}>
-              <ListItemText>Payment</ListItemText>
-              <Box mt={2}>
-                <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
+                <Box mt={2} mb={2}>
+                  <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+                </Box>
               </Box>
-              <Box mt={2} mb={2}>
-                <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+
+              <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
+
+              <Box mt={3}>
+                <Button variant="outlined" href="/card">Edit</Button>
+                  <Button>Remove</Button>
               </Box>
             </Box>
-
-            <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
-
-            <Box mt={3}>
-              <Button variant="outlined" href="/card">Edit</Button>
-                <Button>Remove</Button>
-            </Box>
+          </Box>
         </Box>
-      </Box>
 
-      <PaymentHistory/>
-      </form>
-    </Container>
+        <PaymentHistory/>
+      </Container>
   );
 }
 

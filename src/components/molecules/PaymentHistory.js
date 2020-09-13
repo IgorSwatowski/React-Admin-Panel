@@ -81,8 +81,8 @@ function PaymentHistory() {
   ];
 
   return (
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <Box width="54%" ml={54.5} mt={3}>
+      <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" alignItems="center" mt={3} ml={21.5} width="612px">
           <TableContainer component={Paper}>
             <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
             <ListItemIcon style={{float: 'right', marginTop: '-40px'}}><GetAppIcon/></ListItemIcon>
@@ -110,7 +110,7 @@ function PaymentHistory() {
                   ))}
                 </TableBody>
              </Table>
-            <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={36}>
+            <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={26}>
                   <ListSubheader>Rows per page</ListSubheader>
                   <Select
                     labelId="demo-simple-select-label"

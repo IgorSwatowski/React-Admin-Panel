@@ -46,39 +46,42 @@ function MultilineTextFields() {
 
   return (
     <Container>
-      <Box style={{ width: '100%' }}>
-        <Box display="flex" p={1}>
-          <Box p={1} order={1} mr={-34} ml={39} mt={1}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
+      <Box display="flex" justifyContent="center">
+          <Box display="flex" p={1} flexGrow={1} ml={28}>
+            <Box p={1} mt={1}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
+            </Box>
+
+            <Box p={1}>
+              <Breadcrumbs aria-label="breadcrumb">
+              <Link 
+                    color='textPrimary'
+                    underline='none' 
+                    variant="h6" 
+                  > 
+                  John Doe
+                </Link>
+              <Link 
+                    onClick={handleClick} 
+                    color='textPrimary'
+                    to="/billings" 
+                    underline='none' 
+                    component="button"
+                    variant="h6" 
+                  > 
+                  Edit Profile
+                </Link>
+              </Breadcrumbs>
+              <Typography variant="body1" color="textSecondary">
+                Set up your VoipChurch presence
+              </Typography>
+            </Box>
           </Box>
 
-          <Box p={1} order={2} ml={34}>
-            <Typography variant="h6">
-              John Doe
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              Set up your VoipChurch presence
-            </Typography>
-          </Box>
-          
-          <Box p={1} order={3} ml={-20}>
-            <Breadcrumbs aria-label="breadcrumb"> 
-              <Link 
-                  onClick={handleClick} 
-                  color='textPrimary'
-                  to="/billings" 
-                  underline='none' 
-                  component="button"
-                  variant="h6" 
-                > 
-                / Edit Profile
-              </Link>
-            </Breadcrumbs> 
-          </Box>
-          <Box p={1} order={5} width="510px" ml={4}>
-            <Box ml={22} mt={2}>
+          <Box p={1} mx="auto" width="350px">
+            <Box mt={3}>
                 <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
-                  <Box display="flex" flexDirection="row">
+                  <Box display="flex" flexDirection="row" mx="auto">
                     <Box order={2} ml={7}>
                       <ListItemText primary="38.9/2000.0"/>
                     </Box>
@@ -89,85 +92,87 @@ function MultilineTextFields() {
               </Box>
             </Box>
         </Box>
-      </Box>
 
-      <form>
-        <Box order={1} display='flex' justifyContent="left" ml={40}>
-          <CollapseSidebarUserItems />
-        </Box> 
-        <Box width="43%" ml={64} p={7} bgcolor="white" order={2} mt={-30}>
-        <Box display='flex' justifyContent='center' alignItems='center'>
-          <TextField
-            id="outlined-multiline-flexible"
-            label="First Name"
-            multiline
-            value={valueFirstName}
-            rowsMax={14}
-            onChange={handleChangeInputFirstName}
-            variant="outlined"
-            style={{width: '300px'}}
-          />
+        <Box display="flex" justifyContent="center" mt={2}>
+          <Box display="flex" justifyContent="center" alignItems="center" mx="auto">
+          <Box mt={-51}>
+            <CollapseSidebarUserItems />
+          </Box> 
+            <Box width="500px" p={7} order={2} bgcolor="white">
+              <Box display='flex' justifyContent='center' alignItems='center'>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="First Name"
+                  multiline
+                  value={valueFirstName}
+                  rowsMax={14}
+                  onChange={handleChangeInputFirstName}
+                  variant="outlined"
+                  style={{width: '300px'}}
+                />
+              </Box>
+              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="Last Name"
+                  multiline
+                  value={valueLastName}
+                  rowsMax={4}
+                  onChange={handleChangeInputLastName}
+                  variant="outlined"
+                  style={{width: '300px'}}
+                />
+              </Box>
+              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="Email"
+                  value={valueEmail}
+                  multiline
+                  onChange={handleChangeInputEmail}
+                  rowsMax={4}
+                  variant="outlined"
+                  style={{width: '300px'}}
+                />
+              </Box>
+              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="Mobile phone"
+                  value={valueMobile}
+                  multiline
+                  rowsMax={4}
+                  onChange={handleChangeInputMobile}
+                  variant="outlined"
+                  style={{width: '300px'}}
+                />
+              </Box>
+              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                <TextField
+                    id="outlined-select-country"
+                    select
+                    label="Country"
+                    value={country}
+                    onChange={handleChangeCountry}
+                    variant="outlined"
+                    style={{width: '300px'}}
+                  >
+                    {countries.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.value}
+                      </MenuItem>
+                    ))}
+                </TextField>
+              </Box>
+              <Box mt={5} pl={14.4}>
+              <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
+                Save profile
+              </Button>
+              </Box>
+            </Box>
+          </Box>
         </Box>
-        <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-          <TextField
-            id="outlined-multiline-flexible"
-            label="Last Name"
-            multiline
-            value={valueLastName}
-            rowsMax={4}
-            onChange={handleChangeInputLastName}
-            variant="outlined"
-            style={{width: '300px'}}
-          />
-        </Box>
-        <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-          <TextField
-            id="outlined-multiline-flexible"
-            label="Email"
-            value={valueEmail}
-            multiline
-            onChange={handleChangeInputEmail}
-            rowsMax={4}
-            variant="outlined"
-            style={{width: '300px'}}
-          />
-        </Box>
-        <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-          <TextField
-            id="outlined-multiline-flexible"
-            label="Mobile phone"
-            value={valueMobile}
-            multiline
-            rowsMax={4}
-            onChange={handleChangeInputMobile}
-            variant="outlined"
-            style={{width: '300px'}}
-          />
-        </Box>
-        <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-          <TextField
-              id="outlined-select-country"
-              select
-              label="Country"
-              value={country}
-              onChange={handleChangeCountry}
-              variant="outlined"
-              style={{width: '300px'}}
-            >
-              {countries.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.value}
-                </MenuItem>
-              ))}
-          </TextField>
-        </Box>
-        <Box mt={5} pl={14.4}>
-        <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
-          Save profile
-        </Button>
-        </Box>
-        </Box>
-      </form>
+
     </Container>
   );
 }
