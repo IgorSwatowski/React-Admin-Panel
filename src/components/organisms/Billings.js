@@ -1,6 +1,5 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import { makeStyles } from '@material-ui/core/styles';
 import {ListItemText} from "@material-ui/core";
 import Link from '@material-ui/core/Link';
