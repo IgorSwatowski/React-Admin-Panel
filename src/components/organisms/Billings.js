@@ -11,6 +11,8 @@ import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 
 import PaymentHistory from 'components/molecules/PaymentHistory.js';
@@ -82,26 +84,24 @@ function Billings() {
           </Box>
         </Box>
 
-        <Box display="flex" justifyContent="center" mt={2}>
-          <Box display="flex" justifyContent="center" alignItems="center" mx="auto">
-          <Box mt={-43}>
-            <CollapseSidebarUserItems />
-          </Box> 
-            <Box width="500px" p={7} order={2} bgcolor="white">
-              <ListItemText>Your Plan</ListItemText>
-              <Box mt={-5.5} ml={39}>
-              <ListSubheader>
-                  <Button className={classes.proVersionMember}>PRO</Button>
-                </ListSubheader>
+        <Grid container direction="row" justify="center" spacing={0}>
+        <Grid item xs={12} sm={2}>
+          <CollapseSidebarUserItems/>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper>
+            <Box p={5}>
+              <Box display="flex" flexDirection="row">
+                <ListItemText>Your Plan</ListItemText>
+                <Button className={classes.proVersionMember}>PRO</Button>
               </Box>
-
-              <Box width='390px' mt={2}>
-                <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
-                  <Box display='flex' flexDirection='row'>
-                    <ListItemText secondary="Minutes used this billing cycle"/>
-                    <ListItemText primary="38.9/2000.0" style={{marginRight: '-115px'}}/>
-                  </Box>
-              </Box>
+                <Box mt={3}>
+                  <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                </Box>
+                <Box display="flex" flexDirection="row">
+                  <ListItemText secondary="Minutes used this billing cycle"/>
+                  <ListItemText primary="38.9/2000.0"/>
+                </Box>
 
               <Box mt={5}>
                 <Button variant="outlined">Change</Button>
@@ -129,8 +129,9 @@ function Billings() {
                   <Button>Remove</Button>
               </Box>
             </Box>
-          </Box>
-        </Box>
+          </Paper>
+        </Grid>
+      </Grid>
 
         <PaymentHistory/>
       </Container>

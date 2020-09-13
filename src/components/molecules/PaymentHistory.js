@@ -21,7 +21,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -81,60 +82,64 @@ function PaymentHistory() {
   ];
 
   return (
-      <Box display="flex" justifyContent="center">
-        <Box display="flex" justifyContent="center" alignItems="center" mt={3} ml={21.5} width="612px">
-          <TableContainer component={Paper}>
-            <ListItemText primary="Payment History" secondary="See all invoices" style={{marginTop: '14px', marginLeft: '16px'}}/>
-            <ListItemIcon style={{float: 'right', marginTop: '-40px'}}><GetAppIcon/></ListItemIcon>
-              <Table size="small" aria-label="a dense table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell></TableCell>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Amount</TableCell>
-                    <TableCell>Plan</TableCell>
-                    <TableCell>Payment Method</TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rowss.map((rowss) => (
-                  <TableRow >
-                    <TableCell>{rowss.status}</TableCell>
-                    <TableCell>{rowss.date}</TableCell>
-                    <TableCell>{rowss.amount}</TableCell>
-                    <TableCell>{rowss.offer}</TableCell>
-                    <TableCell>{rowss.PaymentMethod}</TableCell>
-                    <TableCell>{rowss.receipt}</TableCell>
-                  </TableRow>
-                  ))}
-                </TableBody>
-             </Table>
-            <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={26}>
-                  <ListSubheader>Rows per page</ListSubheader>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={rows}
-                    onChange={handleRowsChange}
-                  >
-                    <MenuItem value={10}>10</MenuItem>
-                    <MenuItem value={11}>11</MenuItem>
-                    <MenuItem value={12}>12</MenuItem>
-                    <MenuItem value={13}>13</MenuItem>
-                  </Select>
-                  <ListSubheader>1-3 of 13</ListSubheader>
-                  <List>
-                  <Box mt={0.4}>
-                    <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
-                    <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+        <Grid container direction="row" justify="center" spacing={0}>
+          <Grid item xs={12} sm={6}>
+            <Box mt={5}>
+              <TableContainer component={Paper}>
+                <Box p={2} display="flex" flexDirection="row">
+                  <ListItemText primary="Payment History" secondary="See all invoices"/>
+                  <ListItemIcon><GetAppIcon/></ListItemIcon>
                   </Box>
-                  </List>
-              </Box>
+                    <Table size="small" aria-label="a dense table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell></TableCell>
+                          <TableCell>Date</TableCell>
+                          <TableCell>Amount</TableCell>
+                          <TableCell>Plan</TableCell>
+                          <TableCell>Payment Method</TableCell>
+                          <TableCell></TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rowss.map((rowss) => (
+                        <TableRow >
+                          <TableCell>{rowss.status}</TableCell>
+                          <TableCell>{rowss.date}</TableCell>
+                          <TableCell>{rowss.amount}</TableCell>
+                          <TableCell>{rowss.offer}</TableCell>
+                          <TableCell>{rowss.PaymentMethod}</TableCell>
+                          <TableCell>{rowss.receipt}</TableCell>
+                        </TableRow>
+                        ))}
+                      </TableBody>
+                  </Table>
+                  <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={26}>
+                        <ListSubheader>Rows per page</ListSubheader>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rows}
+                          onChange={handleRowsChange}
+                        >
+                          <MenuItem value={10}>10</MenuItem>
+                          <MenuItem value={11}>11</MenuItem>
+                          <MenuItem value={12}>12</MenuItem>
+                          <MenuItem value={13}>13</MenuItem>
+                        </Select>
+                        <ListSubheader>1-3 of 13</ListSubheader>
+                        <List>
+                        <Box mt={0.4}>
+                          <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
+                          <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+                        </Box>
+                        </List>
+                    </Box>
 
-          </TableContainer>
-        </Box>
-      </Box>
+                </TableContainer>
+              </Box>
+          </Grid>
+        </Grid>
   );
 }
 

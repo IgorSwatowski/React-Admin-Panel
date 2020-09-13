@@ -3,12 +3,13 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { routes } from "routes/index.js";
 import { Link } from "react-router-dom";
+import Box from "@material-ui/core/Box";
+
 
 function CollapseSidebarUserItem() {
 
   return (
-    <div>
-          <Tabs
+            <Tabs
             orientation="vertical"
             variant="scrollable"
             >
@@ -38,7 +39,6 @@ function CollapseSidebarUserItem() {
                 to={routes.card}
               />
             </Tabs>
-  </div>
   );
 }
 

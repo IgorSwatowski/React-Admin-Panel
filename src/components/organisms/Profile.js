@@ -10,6 +10,8 @@ import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
@@ -93,13 +95,14 @@ function MultilineTextFields() {
             </Box>
         </Box>
 
-        <Box display="flex" justifyContent="center" mt={2}>
-          <Box display="flex" justifyContent="center" alignItems="center" mx="auto">
-          <Box mt={-51}>
-            <CollapseSidebarUserItems />
-          </Box> 
-            <Box width="500px" p={7} order={2} bgcolor="white">
-              <Box display='flex' justifyContent='center' alignItems='center'>
+        <Grid container direction="row" justify="center" spacing={0}>
+        <Grid item xs={12} sm={2}>
+          <CollapseSidebarUserItems/>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper>
+            <Box p={5}>
+              <Box display='flex' justifyContent='center' alignItems='center' mt={5}>
                 <TextField
                   id="outlined-multiline-flexible"
                   label="First Name"
@@ -108,7 +111,7 @@ function MultilineTextFields() {
                   rowsMax={14}
                   onChange={handleChangeInputFirstName}
                   variant="outlined"
-                  style={{width: '300px'}}
+                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -120,7 +123,7 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputLastName}
                   variant="outlined"
-                  style={{width: '300px'}}
+                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -132,7 +135,7 @@ function MultilineTextFields() {
                   onChange={handleChangeInputEmail}
                   rowsMax={4}
                   variant="outlined"
-                  style={{width: '300px'}}
+                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -144,7 +147,7 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputMobile}
                   variant="outlined"
-                  style={{width: '300px'}}
+                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -155,7 +158,7 @@ function MultilineTextFields() {
                     value={country}
                     onChange={handleChangeCountry}
                     variant="outlined"
-                    style={{width: '300px'}}
+                    style={{width: '342px'}}
                   >
                     {countries.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
@@ -164,14 +167,15 @@ function MultilineTextFields() {
                     ))}
                 </TextField>
               </Box>
-              <Box mt={5} pl={14.4}>
+              <Box mt={5}display='flex' justifyContent='center' alignItems='center' >
               <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
                 Save profile
               </Button>
               </Box>
             </Box>
-          </Box>
-        </Box>
+          </Paper>
+        </Grid>
+      </Grid>
 
     </Container>
   );
