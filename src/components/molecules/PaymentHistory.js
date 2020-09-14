@@ -81,7 +81,7 @@ function PaymentHistory() {
   ];
 
   return (
-        <Grid container direction="row" justify="center" spacing={0}>
+        <Grid container direction="row" justify="center" flexWrap="wrap" spacing={0}>
           <Grid item xs={12} sm={6}>
             <Box mt={5}>
               <TableContainer component={Paper}>
@@ -113,7 +113,7 @@ function PaymentHistory() {
                         ))}
                       </TableBody>
                   </Table>
-                  <Box display='flex'  flexWrap='wrap' flexDiretion='row' ml={26}>
+                  <Box display="flex" flexWrap="wrap" flexDiretion='row' justifyContent="right" alignItems="right">
                         <ListSubheader>Rows per page</ListSubheader>
                         <Select
                           labelId="demo-simple-select-label"

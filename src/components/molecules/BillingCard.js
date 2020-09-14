@@ -16,7 +16,8 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
@@ -56,8 +57,8 @@ function CardBilling() {
   return (
     <Container 
       maxWidth='lg'>
-        <Box display="flex" justifyContent="center">
-          <Box display="flex" p={1} flexGrow={1} ml={28}>
+      <Box display="flex" justifyContent="center" flexWrap="wrap">
+        <Box display="flex" justifyContent="center" p={1} flexGrow={1} mx="auto">
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
             </Box>
@@ -73,39 +74,29 @@ function CardBilling() {
                 </Link>
               <Link 
                     onClick={handleClick} 
-                    style={{color: '#2196F3'}}
-                    to="/billings" 
-                    underline='none' 
-                    component="button"
-                    variant="h6" 
-                  > 
-                  Billing
-                </Link>
-                <Link 
-                    onClick={handleClick} 
                     color='textPrimary'
                     to="/billings" 
                     underline='none' 
                     component="button"
                     variant="h6" 
                   > 
-                  Card
+                  Edit Profile
                 </Link>
               </Breadcrumbs>
               <Typography variant="body1" color="textSecondary">
-                Add a card to your account
+                Set up your VoipChurch presence
               </Typography>
             </Box>
           </Box>
-        </Box>
-
-        <Box display="flex" justifyContent="center" mt={2}>
-          <Box display="flex" justifyContent="center" alignItems="center" mx="auto">
-            <Box mt={-90}>
-              <CollapseSidebarUserItems />
-            </Box> 
-            <Box width="500px" p={7} order={2} bgcolor="white">
-
+      </Box>
+        
+        <Grid container direction="row" justify="center" spacing={0}>
+        <Grid item xs={12} sm={2}>
+          <CollapseSidebarUserItems/>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper>
+          <Box p={7}>
                 <Typography variant="body1" color="textPrimary">
                   Credit Card
                 </Typography>
@@ -123,7 +114,6 @@ function CardBilling() {
                     rowsMax={4}
                     onChange={handleAccountHolder}
                     variant="outlined"
-                    style={{width: '400px'}}
                   />
                 </Box>
 
@@ -135,21 +125,18 @@ function CardBilling() {
                         value={credit}
                         onChange={handleChangeCredit}
                         startAdornment={<CreditCardIcon style={{marginRight: '20px'}}></CreditCardIcon>}
-                        labelWidth={90}
-                        style={{width: '400px'}}
                       />
                   </FormControl>
                 </Box>
 
-                <Box mt={3}>
-                  <FormControl variant="outlined" style={{width: '130px'}}>
+                <Box mt={3} display="flex" flexDirection="row" flexWrap="wrap">
+                  <FormControl variant="outlined">
                     <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
                         value={month}
                         onChange={handleChangeMonth}
-                        labelWidth={60}
                       >
                         <MenuItem value="">
                           <em>None</em>
@@ -160,14 +147,13 @@ function CardBilling() {
                       </Select>
                   </FormControl>
 
-                  <FormControl variant="outlined" style={{width: '130px', marginLeft: '20px'}}>
+                  <FormControl variant="outlined">
                     <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
                         value={month}
                         onChange={handleChangeMonth}
-                        labelWidth={60}
                       >
                         <MenuItem value="">
                           <em>None</em>
@@ -178,14 +164,13 @@ function CardBilling() {
                       </Select>
                   </FormControl>
 
-                  <FormControl variant="outlined" style={{width: '130px', marginTop: '20px', marginRight: '260px'}}>
+                  <FormControl variant="outlined">
                     <TextField
                       id="outlined-textarea"
                       label="CVV"
                       placeholder="CVV"
                       multiline
                       variant="outlined"
-                      style={{width: '100px', marginTop: '-75px', marginLeft: '300px'}}
                     />
                   </FormControl>
                 </Box>
@@ -203,7 +188,6 @@ function CardBilling() {
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    style={{width: '400px'}}
                     />
                 </Box>
                 <Box mt={3}>
@@ -213,7 +197,6 @@ function CardBilling() {
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    style={{width: '400px'}}
                     />
                 </Box>
                 <Box mt={3}>
@@ -223,34 +206,30 @@ function CardBilling() {
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    style={{width: '400px'}}
                     />
                 </Box>
-                <Box mt={3}>
+                <Box mt={3} display="flex" flexDirection="row" flexWrap="wrap">
                     <TextField
                     id="outlined-multiline-flexible"
                     label="ZIP Code"
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    style={{width: '130px'}}
                     />
-
-                    <TextField
-                        id="outlined-select-country"
-                        select
-                        label="Country"
-                        value={country}
-                        onChange={handleChangeCountry}
-                        variant="outlined"
-                        style={{width: '230px', marginLeft: '40px'}}
-                        >
-                        {countries.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
-                            {option.value}
-                            </MenuItem>
-                        ))}
-                        </TextField>
+                      <TextField
+                          id="outlined-select-country"
+                          select
+                          label="Country"
+                          value={country}
+                          onChange={handleChangeCountry}
+                          variant="outlined"
+                          >
+                          {countries.map((option) => (
+                              <MenuItem key={option.value} value={option.value}>
+                              {option.value}
+                              </MenuItem>
+                          ))}
+                          </TextField>
                 </Box>
 
                 <Box mt={5}>
@@ -258,9 +237,10 @@ function CardBilling() {
                     Save
                   </Button>
                 </Box>
-            </Box>
           </Box>
-        </Box>
+          </Paper>
+        </Grid>
+      </Grid>
 
     </Container>
   );
