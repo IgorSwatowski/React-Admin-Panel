@@ -21,6 +21,9 @@ import PolymerRoundedIcon from '@material-ui/icons/PolymerRounded';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import PowerSettingsNewRoundedIcon from '@material-ui/icons/PowerSettingsNewRounded';
 import SaveAltRoundedIcon from '@material-ui/icons/SaveAltRounded';
+import IconButton from '@material-ui/core/IconButton';
+
+import MenuIcon from '@material-ui/icons/Menu';
 
 import CollapseSidebarUserItem from "components/atoms/CollapseSidebarUserItems.js";
 
@@ -55,16 +58,20 @@ const useStyles = makeStyles((theme) => ({
 
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth
-  }
+    width: drawerWidth,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
 }));
 
 function ResponsiveDrawer(props) {
   const { window } = props;
   const classes = useStyles();
+  const [open, setOpen] = React.useState(true);
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [open, setOpen] = React.useState(true);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -168,6 +175,14 @@ function ResponsiveDrawer(props) {
 
   return (
     <div className={classes.root}>
+      <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+          >
+          <MenuIcon />
+        </IconButton>
       <nav className={classes.drawer} aria-label="mailbox folders">
         <Hidden smUp implementation="css">
           <Drawer
