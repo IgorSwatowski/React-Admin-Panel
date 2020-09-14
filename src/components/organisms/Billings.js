@@ -50,8 +50,8 @@ function Billings() {
   return (
       <Container 
       maxWidth='lg'>
-        <Box display="flex" justifyContent="center">
-          <Box display="flex" p={1} flexGrow={1} ml={28}>
+        <Box display="flex" justifyContent="center" flexWrap="wrap">
+          <Box display="flex" justifyContent="center" p={1} flexGrow={1} mx="auto">
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
             </Box>
