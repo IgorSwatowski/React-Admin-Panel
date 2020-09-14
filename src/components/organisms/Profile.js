@@ -111,7 +111,6 @@ function MultilineTextFields() {
                   rowsMax={14}
                   onChange={handleChangeInputFirstName}
                   variant="outlined"
-                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -123,7 +122,6 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputLastName}
                   variant="outlined"
-                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -135,7 +133,6 @@ function MultilineTextFields() {
                   onChange={handleChangeInputEmail}
                   rowsMax={4}
                   variant="outlined"
-                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -147,7 +144,6 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputMobile}
                   variant="outlined"
-                  style={{width: '342px'}}
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -158,7 +154,6 @@ function MultilineTextFields() {
                     value={country}
                     onChange={handleChangeCountry}
                     variant="outlined"
-                    style={{width: '342px'}}
                   >
                     {countries.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
@@ -167,7 +162,7 @@ function MultilineTextFields() {
                     ))}
                 </TextField>
               </Box>
-              <Box mt={5}display='flex' justifyContent='center' alignItems='center' >
+              <Box mt={5} display='flex' justifyContent='center' alignItems='center' >
               <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
                 Save profile
               </Button>
