@@ -48,7 +48,7 @@ function MultilineTextFields() {
 
   return (
     <Container maxWidth="lg">
-      <Box display="flex" flexWrap="wrap" mt={15}>
+      <Box display="flex" flexWrap="wrap" mt={15} mb={-0.5}>
           <Box display="flex" flexGrow={1}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
@@ -101,77 +101,94 @@ function MultilineTextFields() {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper>
-            <Box p={5}>
-              <Box display='flex' justifyContent='center' alignItems='center' mt={5}>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="First Name"
-                  multiline
-                  value={valueFirstName}
-                  rowsMax={14}
-                  onChange={handleChangeInputFirstName}
-                  variant="outlined"
-                  fullWidth
-                />
-              </Box>
-              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Last Name"
-                  multiline
-                  value={valueLastName}
-                  rowsMax={4}
-                  onChange={handleChangeInputLastName}
-                  variant="outlined"
-                  fullWidth
-                />
-              </Box>
-              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Email"
-                  value={valueEmail}
-                  multiline
-                  onChange={handleChangeInputEmail}
-                  rowsMax={4}
-                  variant="outlined"
-                  fullWidth
-                />
-              </Box>
-              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  label="Mobile phone"
-                  value={valueMobile}
-                  multiline
-                  rowsMax={4}
-                  onChange={handleChangeInputMobile}
-                  variant="outlined"
-                  fullWidth
-                />
-              </Box>
-              <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
-                <TextField
-                    id="outlined-select-country"
-                    select
-                    label="Country"
-                    value={country}
-                    onChange={handleChangeCountry}
+            <Box p={7}>
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display="flex" justifyContent="center" alignItems="center">
+                    <TextField
+                      id="outlined-multiline-flexible"
+                      label="First Name"
+                      multiline
+                      value={valueFirstName}
+                      rowsMax={14}
+                      onChange={handleChangeInputFirstName}
+                      variant="outlined"
+                      fullWidth
+                    />
+                  </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display="flex" justifyContent="center" alignItems="center">
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Last Name"
+                    multiline
+                    value={valueLastName}
+                    rowsMax={4}
+                    onChange={handleChangeInputLastName}
                     variant="outlined"
                     fullWidth
-                  >
-                    {countries.map((option) => (
-                      <MenuItem key={option.value} value={option.value}>
-                        {option.value}
-                      </MenuItem>
-                    ))}
-                </TextField>
-              </Box>
-              <Box mt={5} display='flex' justifyContent='center' alignItems='center' >
-              <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
-                Save profile
-              </Button>
-              </Box>
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Email"
+                    value={valueEmail}
+                    multiline
+                    onChange={handleChangeInputEmail}
+                    rowsMax={4}
+                    variant="outlined"
+                    fullWidth
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Mobile phone"
+                    value={valueMobile}
+                    multiline
+                    rowsMax={4}
+                    onChange={handleChangeInputMobile}
+                    variant="outlined"
+                    fullWidth
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
+                  <TextField
+                      id="outlined-select-country"
+                      select
+                      label="Country"
+                      value={country}
+                      onChange={handleChangeCountry}
+                      variant="outlined"
+                      fullWidth
+                    >
+                      {countries.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.value}
+                        </MenuItem>
+                      ))}
+                  </TextField>
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <Box mt={5} display='flex' justifyContent='center' alignItems='center' >
+                <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
+                  Save profile
+                </Button>
+                </Box>
+              </Grid>
             </Box>
           </Paper>
         </Grid>

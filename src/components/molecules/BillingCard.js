@@ -91,21 +91,19 @@ function CardBilling() {
       </Box>
         
         <Grid container direction="row" justifyContent="center" spacing={0}>
-        <Grid item xs={12} sm={2}>
-          <CollapseSidebarUserItems/>
-        </Grid>
-        <Grid item xs={12} sm={10}>
-          <Paper>
-          <Box p={10}>
-                <Typography variant="body1" color="textPrimary">
-                  Credit Card
-                </Typography>
+          <Grid item xs={12} sm={2}>
+            <CollapseSidebarUserItems/>
+          </Grid>
+          <Grid item xs={12} sm={10}>
+           <Paper>
+            <Box p={7}>
+              <Grid item xs={12} sm={12} >
+                <Typography variant="body1" color="textPrimary">Credit Card</Typography>
+                <Typography variant="body2" color="textSecondary">Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account</Typography>
+              </Grid>
 
-                <Typography variant="body2" color="textSecondary">
-                  Choose how you want to pay, you have a choice of Credit / Debit Card or Bank account
-                </Typography>
-
-                <Box mt={3} display="flex" justifyContent="center">
+              <Grid item xs={12} sm={12}>
+                <Box mt={3}>
                   <TextField
                     id="outlined-multiline-flexible"
                     label="Account Holder"
@@ -114,23 +112,26 @@ function CardBilling() {
                     rowsMax={4}
                     onChange={handleAccountHolder}
                     variant="outlined"
-                    fullWidth
-                  />
+                    />
                 </Box>
+              </Grid>
 
+              <Grid item xs={12} sm={12}>
                 <Box mt={3}>
-                  <FormControl fullWidth variant="outlined">
+                  <FormControl variant="outlined">
                     <InputLabel htmlFor="outlined-adornment-month">Credit Card</InputLabel>
                       <OutlinedInput
                         id="outlined-adornment-month"
                         value={credit}
                         onChange={handleChangeCredit}
                         startAdornment={<CreditCardIcon style={{marginRight: '20px'}}></CreditCardIcon>}
-                      />
-                  </FormControl>
-                </Box>
+                        />
+                    </FormControl>
+                  </Box>
+              </Grid>
 
-                <Box mt={3} display="flex" flexWrap="wrap">
+              <Grid item xs={12} sm={12}>
+                <Box mt={3} display="flex" flexWrap="wrap" mb={5}>
                   <Box display="flex" flexDirection="row" flexWrap="wrap" mr={2}>
                     <FormControl variant="outlined">
                       <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
@@ -139,7 +140,7 @@ function CardBilling() {
                           id="demo-simple-select-outlined"
                           value={month}
                           onChange={handleChangeMonth}
-                        >
+                         >
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -169,7 +170,7 @@ function CardBilling() {
                     </FormControl>
                   </Box>
 
-                  <Box display="flex" flexDirection="row" flexWrap="wrap" mr={4}>
+                  <Box display="flex" flexDirection="row" mr={4}>
                     <FormControl variant="outlined">
                       <TextField
                         id="outlined-textarea"
@@ -181,79 +182,93 @@ function CardBilling() {
                     </FormControl>
                   </Box>
                 </Box>
+              </Grid>
 
+              <Grid item xs={12} sm={12}>
                 <Box mt={1}>
-                    <Divider/>
-                    <ListItemText style={{marginTop: '20px'}}>Address</ListItemText>
-                    <ListSubheader style={{marginLeft: '-15px'}}>Use a permament address where you can receive confirmation</ListSubheader>
+                  <Divider/>
+                  <ListItemText style={{marginTop: '20px'}}>Address</ListItemText>
+                  <ListSubheader style={{marginLeft: '-15px'}}>Use a permament address where you can receive confirmation</ListSubheader>
                 </Box>
+              </Grid>
 
+              <Grid item xs={12} sm={12}>
                 <Box mt={3}>
-                    <TextField
+                  <TextField
                     id="outlined-multiline-flexible"
                     label="Street Address"
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    fullWidth
-                    />
+                  />
                 </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
                 <Box mt={3}>
-                    <TextField
+                  <TextField
                     id="outlined-multiline-flexible"
                     label="City"
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    fullWidth
-                    />
+                  />
                 </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
                 <Box mt={3}>
-                    <TextField
+                  <TextField
                     id="outlined-multiline-flexible"
                     label="State"
                     multiline
                     rowsMax={4}
                     variant="outlined"
-                    fullWidth
-                    />
+                  />
                 </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
                 <Box display="flex" flexWrap="wrap">
                   <Box mt={3} display="flex" flexDirection="row" flexWrap="wrap" mr={4}>
-                      <TextField
+                    <TextField
                       id="outlined-multiline-flexible"
                       label="ZIP Code"
                       multiline
                       rowsMax={4}
                       variant="outlined"
                       fullWidth
-                      />
+                    />
                   </Box>
+
                   <Box mt={3} display="flex" flexDirection="row" flexWrap="wrap">
                     <TextField
-                              id="outlined-select-country"
-                              select
-                              label="Country"
-                              value={country}
-                              onChange={handleChangeCountry}
-                              variant="outlined"
-                              fullWidth
-                              >
-                              {countries.map((option) => (
-                                  <MenuItem key={option.value} value={option.value}>
-                                  {option.value}
-                                  </MenuItem>
-                              ))}
-                      </TextField>
-                    </Box>
+                      id="outlined-select-country"
+                      select
+                      label="Country"
+                      value={country}
+                      onChange={handleChangeCountry}
+                      variant="outlined"
+                      fullWidth
+                    >
+                      {countries.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.value}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </Box>
                 </Box>
+              </Grid>
 
+              <Grid item xs={12} sm={12}>
                 <Box mt={5}>
                   <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
                     Save
                   </Button>
-                </Box>
-          </Box>
+                </Box>                
+              </Grid>
+            </Box>
           </Paper>
         </Grid>
       </Grid>

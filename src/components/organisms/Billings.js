@@ -50,7 +50,7 @@ function Billings() {
   return (
       <Container 
       maxWidth="lg">
-        <Box display="flex" flexWrap="wrap"  mt={15}>
+        <Box display="flex" flexWrap="wrap" mt={15}>
           <Box display="flex" flexGrow={1}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
@@ -84,53 +84,64 @@ function Billings() {
         </Box>
 
         <Grid container direction="row" justifyContent="center" spacing={0}>
-        <Grid item xs={12} sm={2}>
-          <CollapseSidebarUserItems/>
+          <Grid item xs={12} sm={2}>
+            <CollapseSidebarUserItems/>
+          </Grid>
+          <Grid item xs={12} sm={10}>
+            <Paper>
+              <Box p={7}>
+                <Grid item xs={12} sm={12}>
+                  <Box display="flex" flexDirection="row">
+                    <ListItemText>Your Plan</ListItemText>
+                    <Button className={classes.proVersionMember}>PRO</Button>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <Box mt={3} width="100%" flexWrap="wrap">
+                    <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <Box display="flex" flexDirection="row" flexWrap="wrap">
+                    <ListItemText secondary="Minutes used this billing cycle"/>
+                    <ListItemText primary="38.9/2000.0"/>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <Box mt={5}>
+                    <Button variant="outlined">Change</Button>
+                    <Button>Cancel Subscription</Button>
+                  </Box>
+                </Grid>
+
+                <Box mt={5}>
+                  <Divider/>
+                </Box>
+                
+                <Grid item xs={12} sm={12}>
+                  <Box mt={6}>
+                    <ListItemText>Payment</ListItemText>
+                    <Box mt={2}>
+                      <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
+                    </Box>
+                    <Box mt={2} mb={2}>
+                      <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+
+                <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
+
+                <Grid item xs={12} sm={12}>
+                  <Box mt={3}>
+                    <Button variant="outlined" href="/card">Edit</Button>
+                    <Button>Remove</Button>
+                  </Box>
+                </Grid>
+              </Box>
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={10}>
-          <Paper>
-            <Box p={10}>
-              <Box display="flex" flexDirection="row">
-                <ListItemText>Your Plan</ListItemText>
-                <Button className={classes.proVersionMember}>PRO</Button>
-              </Box>
-                <Box mt={3} width="100%" flexWrap="wrap">
-                  <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
-                </Box>
-                <Box display="flex" flexDirection="row" flexWrap="wrap">
-                  <ListItemText secondary="Minutes used this billing cycle"/>
-                  <ListItemText primary="38.9/2000.0"/>
-                </Box>
-
-              <Box mt={5}>
-                <Button variant="outlined">Change</Button>
-                <Button>Cancel Subscription</Button>
-              </Box>
-
-              <Box mt={5}>
-                <Divider/>
-              </Box>
-
-              <Box mt={6}>
-                <ListItemText>Payment</ListItemText>
-                <Box mt={2}>
-                  <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
-                </Box>
-                <Box mt={2} mb={2}>
-                  <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
-                </Box>
-              </Box>
-
-              <ListItemText>Visa Ending in 0218 expiring 4/2020</ListItemText>
-
-              <Box mt={3}>
-                <Button variant="outlined" href="/card">Edit</Button>
-                  <Button>Remove</Button>
-              </Box>
-            </Box>
-          </Paper>
-        </Grid>
-      </Grid>
 
         <PaymentHistory/>
       </Container>
