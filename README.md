@@ -9,5 +9,5 @@ In project I used:
 - States,
 
 To edit your credit card, go to Billing -> Section Payment -> Edit
-Demo: https://quirky-tereshkova-21b7a5.netlify.app
+Demo: https://5f6102b777ac3400074765fc--quirky-tereshkova-21b7a5.netlify.app
 
