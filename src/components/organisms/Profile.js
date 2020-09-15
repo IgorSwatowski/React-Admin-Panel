@@ -47,9 +47,9 @@ function MultilineTextFields() {
   const handleClick = event => event.preventDefault();
 
   return (
-    <Container>
-      <Box display="flex" justifyContent="center" flexWrap="wrap">
-          <Box display="flex" justifyContent="center" p={1} flexGrow={1} mx="auto">
+    <Container maxWidth="lg">
+      <Box display="flex" flexWrap="wrap" mt={15}>
+          <Box display="flex" flexGrow={1}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
             </Box>
@@ -99,7 +99,7 @@ function MultilineTextFields() {
         <Grid item xs={12} sm={2}>
           <CollapseSidebarUserItems/>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={10}>
           <Paper>
             <Box p={5}>
               <Box display='flex' justifyContent='center' alignItems='center' mt={5}>
@@ -111,6 +111,7 @@ function MultilineTextFields() {
                   rowsMax={14}
                   onChange={handleChangeInputFirstName}
                   variant="outlined"
+                  fullWidth
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -122,6 +123,7 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputLastName}
                   variant="outlined"
+                  fullWidth
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -133,6 +135,7 @@ function MultilineTextFields() {
                   onChange={handleChangeInputEmail}
                   rowsMax={4}
                   variant="outlined"
+                  fullWidth
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -144,6 +147,7 @@ function MultilineTextFields() {
                   rowsMax={4}
                   onChange={handleChangeInputMobile}
                   variant="outlined"
+                  fullWidth
                 />
               </Box>
               <Box mt={5} display='flex' justifyContent='center' alignItems='center'>
@@ -154,6 +158,7 @@ function MultilineTextFields() {
                     value={country}
                     onChange={handleChangeCountry}
                     variant="outlined"
+                    fullWidth
                   >
                     {countries.map((option) => (
                       <MenuItem key={option.value} value={option.value}>

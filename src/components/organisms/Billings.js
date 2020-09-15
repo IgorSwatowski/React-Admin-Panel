@@ -49,9 +49,9 @@ function Billings() {
   const handleClick = event => event.preventDefault();
   return (
       <Container 
-      maxWidth='lg'>
-        <Box display="flex" justifyContent="center" flexWrap="wrap">
-          <Box display="flex" justifyContent="center" p={1} flexGrow={1} mx="auto">
+      maxWidth="lg">
+        <Box display="flex" flexWrap="wrap"  mt={15}>
+          <Box display="flex" flexGrow={1}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
             </Box>
@@ -83,21 +83,21 @@ function Billings() {
           </Box>
         </Box>
 
-        <Grid container direction="row" justify="center" spacing={0}>
+        <Grid container direction="row" justifyContent="center" spacing={0}>
         <Grid item xs={12} sm={2}>
           <CollapseSidebarUserItems/>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={10}>
           <Paper>
-            <Box p={5}>
+            <Box p={10}>
               <Box display="flex" flexDirection="row">
                 <ListItemText>Your Plan</ListItemText>
                 <Button className={classes.proVersionMember}>PRO</Button>
               </Box>
-                <Box mt={3}>
+                <Box mt={3} width="100%" flexWrap="wrap">
                   <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
                 </Box>
-                <Box display="flex" flexDirection="row">
+                <Box display="flex" flexDirection="row" flexWrap="wrap">
                   <ListItemText secondary="Minutes used this billing cycle"/>
                   <ListItemText primary="38.9/2000.0"/>
                 </Box>

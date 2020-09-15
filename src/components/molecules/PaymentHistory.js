@@ -22,7 +22,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Grid from '@material-ui/core/Grid';
-
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,9 +81,10 @@ function PaymentHistory() {
   ];
 
   return (
-        <Grid container direction="row" justify="center" flexWrap="wrap" spacing={0}>
-          <Grid item xs={12} sm={6}>
-            <Box mt={5}>
+    <Container maxWidth="lg">
+          <Grid container direction="row" justifyContent="center" spacing={0}>
+          <Grid item xs={12} sm={12}>
+            <Box mt={5} >
               <TableContainer component={Paper}>
                 <Box p={2} display="flex" flexDirection="row">
                   <ListItemText primary="Payment History" secondary="See all invoices"/>
@@ -139,6 +140,7 @@ function PaymentHistory() {
               </Box>
           </Grid>
         </Grid>
+    </Container>
   );
 }
 
