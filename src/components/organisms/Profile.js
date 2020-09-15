@@ -50,8 +50,8 @@ function MultilineTextFields() {
 
   return (
     <Container maxWidth="lg">
-      <Box display="flex" flexWrap="wrap" mt={15} pb={3}>
-          <Box display="flex" flexGrow={1}>
+      <Box display="flex" flexWrap="wrap" mt={15} pb={2}>
+          <Box display="flex" flexGrow={1} alignItems="center" css={{ height: 100 }}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
             </Box>
@@ -71,13 +71,13 @@ function MultilineTextFields() {
             </Box>
           </Box>
 
-          <Box mx="auto" width="350px" alignItems="center">
+          <Box display="flex" alignItems="center" css={{ height: 100 }}>
             <Box>
                 <Box pb={1}>
                   <LinearProgress variant="determinate"/>
                 </Box>
                 <Box display="flex">
-                  <Box flexGrow={1}>
+                  <Box flexGrow={1} pr={5}>
                     <Typography variant="caption" display="block" color="textSecondary" gutterBottom>
                       Minutes used this billing cycle
                     </Typography>
