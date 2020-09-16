@@ -75,25 +75,16 @@ function MultilineTextFields() {
                     <Typography variant="caption" display="block" color="textSecondary" gutterBottom>
                       Minutes used this billing cycle
                     </Typography>
-<<<<<<< HEAD
                   </Box>
                   <Box>
                     <Typography variant="caption" display="block" gutterBottom>
                       38.9/2000.0
                     </Typography>
                   </Box>
-=======
                   </Box>
-                  <Box>
-                    <Typography variant="caption" display="block" gutterBottom>
-                      38.9/2000.0
-                    </Typography>
-                  </Box>
->>>>>>> 9073e4a335728eef5beef40ecc4a7bcf20b86ee5
                 </Box>
-              </Box>
             </Box>
-      </Box>
+        </Box>
 
         <Grid container direction="row" justify="center" spacing={0}>
         <Grid item xs={12} sm={2}>
