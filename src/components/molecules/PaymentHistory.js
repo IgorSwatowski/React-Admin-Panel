@@ -5,7 +5,6 @@ import {ListItemIcon} from "@material-ui/core";
 import {ListItemText} from "@material-ui/core";
 import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import MenuItem from '@material-ui/core/MenuItem';
 import GetAppIcon from '@material-ui/icons/GetApp';
@@ -23,6 +22,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,61 +83,65 @@ function PaymentHistory() {
 
   return (
     <Container maxWidth="lg">
-          <Grid container direction="row" justifyContent="center" spacing={0}>
+        <Grid container direction="row" justifyContent="center" spacing={3}>
           <Grid item xs={12} sm={12}>
-            <Box mt={5} >
-              <TableContainer component={Paper}>
-                <Box p={2} display="flex" flexDirection="row">
-                  <ListItemText primary="Payment History" secondary="See all invoices"/>
-                  <ListItemIcon><GetAppIcon/></ListItemIcon>
-                  </Box>
-                    <Table size="small" aria-label="a dense table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell></TableCell>
-                          <TableCell>Date</TableCell>
-                          <TableCell>Amount</TableCell>
-                          <TableCell>Plan</TableCell>
-                          <TableCell>Payment Method</TableCell>
-                          <TableCell></TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {rowss.map((rowss) => (
-                        <TableRow >
-                          <TableCell>{rowss.status}</TableCell>
-                          <TableCell>{rowss.date}</TableCell>
-                          <TableCell>{rowss.amount}</TableCell>
-                          <TableCell>{rowss.offer}</TableCell>
-                          <TableCell>{rowss.PaymentMethod}</TableCell>
-                          <TableCell>{rowss.receipt}</TableCell>
-                        </TableRow>
-                        ))}
-                      </TableBody>
-                  </Table>
-                  <Box display="flex" flexWrap="wrap" flexDiretion='row' justifyContent="right" alignItems="right">
-                        <ListSubheader>Rows per page</ListSubheader>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={rows}
-                          onChange={handleRowsChange}
-                        >
-                          <MenuItem value={10}>10</MenuItem>
-                          <MenuItem value={11}>11</MenuItem>
-                          <MenuItem value={12}>12</MenuItem>
-                          <MenuItem value={13}>13</MenuItem>
-                        </Select>
-                        <ListSubheader>1-3 of 13</ListSubheader>
-                        <List>
-                        <Box mt={0.4}>
-                          <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
-                          <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
-                        </Box>
-                        </List>
+            <Box mt={5}>
+              <Card variant="outlined">
+                <CardContent>
+                  <TableContainer>
+                  <Box p={2} display="flex" flexDirection="row">
+                    <ListItemText primary="Payment History" secondary="See all invoices"/>
+                    <ListItemIcon><GetAppIcon/></ListItemIcon>
                     </Box>
+                      <Table size="small" aria-label="a dense table">
+                        <TableHead>
+                          <TableRow>
+                            <TableCell></TableCell>
+                            <TableCell>Date</TableCell>
+                            <TableCell>Amount</TableCell>
+                            <TableCell>Plan</TableCell>
+                            <TableCell>Payment Method</TableCell>
+                            <TableCell></TableCell>
+                          </TableRow>
+                        </TableHead>
+                        <TableBody>
+                          {rowss.map((rowss) => (
+                          <TableRow >
+                            <TableCell>{rowss.status}</TableCell>
+                            <TableCell>{rowss.date}</TableCell>
+                            <TableCell>{rowss.amount}</TableCell>
+                            <TableCell>{rowss.offer}</TableCell>
+                            <TableCell>{rowss.PaymentMethod}</TableCell>
+                            <TableCell>{rowss.receipt}</TableCell>
+                          </TableRow>
+                          ))}
+                        </TableBody>
+                    </Table>
+                    <Box display="flex" flexWrap="wrap" flexDiretion='row' justifyContent="right" alignItems="right">
+                          <ListSubheader>Rows per page</ListSubheader>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={rows}
+                            onChange={handleRowsChange}
+                          >
+                            <MenuItem value={10}>10</MenuItem>
+                            <MenuItem value={11}>11</MenuItem>
+                            <MenuItem value={12}>12</MenuItem>
+                            <MenuItem value={13}>13</MenuItem>
+                          </Select>
+                          <ListSubheader>1-3 of 13</ListSubheader>
+                          <List>
+                          <Box mt={0.4}>
+                            <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
+                            <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
+                          </Box>
+                          </List>
+                      </Box>
 
-                </TableContainer>
+                  </TableContainer>
+                </CardContent>
+              </Card>
               </Box>
           </Grid>
         </Grid>
