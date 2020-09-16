@@ -98,13 +98,19 @@ function Billings() {
                 </Grid>
                 <Grid item xs={12} sm={12}>
                   <Box mt={3} width="100%" flexWrap="wrap">
-                    <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                    <LinearProgress variant="determinate"/>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={12}>
                   <Box display="flex" flexDirection="row" flexWrap="wrap">
-                    <ListItemText secondary="Minutes used this billing cycle"/>
-                    <ListItemText primary="38.9/2000.0"/>
+                      <Typography variant="subtitle2" color="textSecondary">
+                        Minutes used this billing cycle
+                      </Typography>
+                      <Box mx="auto">
+                        <Typography>
+                            38.9/2000.0
+                        </Typography>
+                      </Box>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={12}>

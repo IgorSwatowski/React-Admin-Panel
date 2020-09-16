@@ -1,7 +1,6 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import TextField from '@material-ui/core/TextField';
-import {ListItemText} from "@material-ui/core";
 import Link from '@material-ui/core/Link';
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
@@ -48,7 +47,7 @@ function MultilineTextFields() {
 
   return (
     <Container maxWidth="lg">
-      <Box display="flex" flexWrap="wrap" mt={15} mb={-0.5}>
+      <Box display="flex" flexWrap="wrap" mt={15}>
           <Box display="flex" flexGrow={1}>
             <Box p={1} mt={1}>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
@@ -82,13 +81,17 @@ function MultilineTextFields() {
 
           <Box p={1} mx="auto" width="350px">
             <Box mt={3}>
-                <LinearProgress variant="determinate" style={{opacity: '0.9'}}/>
+                <LinearProgress variant="determinate"/>
                   <Box display="flex" flexDirection="row" mx="auto">
                     <Box order={2} ml={7}>
-                      <ListItemText primary="38.9/2000.0"/>
+                      <Typography>
+                          38.9/2000.0
+                      </Typography>
                     </Box>
                     <Box order={1}>
-                      <ListItemText secondary="Minutes used this billing cycle"/>
+                      <Typography variant="subtitle2" color="textSecondary">
+                        Minutes used this billing cycle
+                      </Typography>
                     </Box>
                   </Box>
               </Box>
