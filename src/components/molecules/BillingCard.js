@@ -110,71 +110,78 @@ function CardBilling() {
                     </Box>
 
                     <Box pb={3}>
-                      <FormControl variant="outlined">
-                        <InputLabel htmlFor="outlined-adornment-month">Credit Card</InputLabel>
+                      <FormControl variant="outlined" fullWidth	>
+                        <InputLabel>Credit Card</InputLabel>
                           <OutlinedInput
                             id="outlined-adornment-month"
                             value={credit}
                             onChange={handleChangeCredit}
                             startAdornment={<CreditCardIcon style={{marginRight: '20px'}}></CreditCardIcon>}
+                            labelWidth={90}
                           />
                       </FormControl>
                     </Box>
   
-                    <Box pb={6} display="flex" flexWrap="wrap">
-                      <Box display="flex" flexDirection="row" mr={2}>
-                        <FormControl variant="outlined">
-                          <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
-                            <Select
-                              labelId="demo-simple-select-outlined-label"
-                              id="demo-simple-select-outlined"
-                              value={month}
-                              onChange={handleChangeMonth}
-                              fullWidth
-                            >
-                              <MenuItem value="">
-                                <em>None</em>
-                              </MenuItem>
-                              <MenuItem value={1}>January</MenuItem>
-                              <MenuItem value={2}>February</MenuItem>
-                              <MenuItem value={3}>March</MenuItem>
+                  <Box pb={6} display="flex" fullWidth>
+                    <Grid container spacing={3}>
+                      <Grid item xs={12} sm={3} fullWidth>
+                        <Box display="flex" flexDirection="row">
+                          <FormControl variant="outlined" fullWidth>
+                            <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
+                              <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={month}
+                                onChange={handleChangeMonth}
+                                labelWidth={60}
+                              >
+                                <MenuItem value="">
+                                  <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={1}>January</MenuItem>
+                                <MenuItem value={2}>February</MenuItem>
+                                <MenuItem value={3}>March</MenuItem>
+                                </Select>
+                          </FormControl>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} sm={3}>
+                        <Box display="flex" flexDirection="row">
+                          <FormControl variant="outlined" fullWidth>
+                            <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
+                              <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={month}
+                                onChange={handleChangeMonth}
+                                labelWidth={60}
+                              >
+                                <MenuItem value="">
+                                  <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={1}>January</MenuItem>
+                                <MenuItem value={2}>February</MenuItem>
+                                <MenuItem value={3}>March</MenuItem>
                               </Select>
-                        </FormControl>
-                      </Box>
-
-                      <Box mr={2} display="flex" flexDirection="row">
-                        <FormControl variant="outlined">
-                          <InputLabel id="demo-simple-select-outlined-label">Month</InputLabel>
-                            <Select
-                              labelId="demo-simple-select-outlined-label"
-                              id="demo-simple-select-outlined"
-                              value={month}
-                              onChange={handleChangeMonth}
-                              fullWidth
-                            >
-                              <MenuItem value="">
-                                <em>None</em>
-                              </MenuItem>
-                              <MenuItem value={1}>January</MenuItem>
-                              <MenuItem value={2}>February</MenuItem>
-                              <MenuItem value={3}>March</MenuItem>
-                            </Select>
-                        </FormControl>
-                      </Box>
-
-                      <Box display="flex" flexDirection="row" >
-                        <FormControl variant="outlined">
-                          <TextField
-                            id="outlined-textarea"
-                            label="CVV"
-                            placeholder="CVV"
-                            multiline
-                            variant="outlined"
-                            fullWidth
-                          />
-                        </FormControl>
-                      </Box>
-                    </Box>
+                          </FormControl>
+                        </Box>
+                      </Grid>
+                      
+                      <Grid item xs={12} sm={6}>
+                        <Box display="flex" flexDirection="row">
+                            <FormControl variant="outlined" fullWidth>
+                              <TextField
+                                id="outlined-textarea"
+                                label="CVV"
+                                placeholder="CVV"
+                                multiline
+                                variant="outlined"
+                              />
+                            </FormControl>
+                          </Box>
+                      </Grid>
+                    </Grid>
+                  </Box>
 
                     <Box pb={3}>
                       <Divider/>
@@ -219,38 +226,43 @@ function CardBilling() {
                     </Box>
 
                     <Box display="flex" flexWrap="wrap">
-                      <Box display="flex" flexDirection="row" flexWrap="wrap" mr={4}>
-                        <TextField
-                          id="outlined-multiline-flexible"
-                          label="ZIP Code"
-                          multiline
-                          rowsMax={4}
-                          variant="outlined"
-                          fullWidth
-                        />
-                      </Box>
-
-                      <Box display="flex" flexDirection="row" flexWrap="wrap">
-                        <TextField
-                          id="outlined-select-country"
-                          select
-                          label="Country"
-                          value={country}
-                          onChange={handleChangeCountry}
-                          variant="outlined"
-                          fullWidth
-                        >
-                          {countries.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
-                              {option.value}
-                            </MenuItem>
-                          ))}
-                        </TextField>
-                      </Box>
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} sm={6}>
+                          <Box display="flex" flexDirection="row" flexWrap="wrap">
+                            <TextField
+                              id="outlined-multiline-flexible"
+                              label="ZIP Code"
+                              multiline
+                              rowsMax={4}
+                              variant="outlined"
+                              fullWidth
+                            />
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <Box display="flex" flexDirection="row" flexWrap="wrap">
+                            <TextField
+                              id="outlined-select-country"
+                              select
+                              label="Country"
+                              value={country}
+                              onChange={handleChangeCountry}
+                              variant="outlined"
+                              fullWidth
+                            >
+                              {countries.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                  {option.value}
+                                </MenuItem>
+                              ))}
+                            </TextField>
+                          </Box>
+                        </Grid>
+                      </Grid>
                     </Box>
 
                     <Box mt={5}>
-                      <Button variant="contained" style={{background: '#2196F3', color: "#fff"}}>
+                      <Button variant="contained" size="large" color="primary">
                         Save
                       </Button>
                     </Box> 
