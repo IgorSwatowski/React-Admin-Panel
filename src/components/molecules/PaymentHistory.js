@@ -82,10 +82,10 @@ function PaymentHistory() {
   const rowss = [
     createData(<DoneIcon style={{ color: '#4CAF50' }}/>,<Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton>),
-    createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$204.96</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>,   ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
+    createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$408.62</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221 </Typography>,   ),
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$260.04', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton> ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, '$699.45', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton> ),
 
   ];
