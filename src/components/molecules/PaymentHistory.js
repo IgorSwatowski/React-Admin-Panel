@@ -1,9 +1,7 @@
 import React from "react";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import { makeStyles } from '@material-ui/core/styles';
 import {ListItemIcon} from "@material-ui/core";
 import {ListItemText} from "@material-ui/core";
-import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import MenuItem from '@material-ui/core/MenuItem';
@@ -21,9 +19,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,16 +74,18 @@ function PaymentHistory() {
   }
   
   const rowss = [
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221' , <ReceiptIcon/>),
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221' , <IconButton aria-label="delete">
+    <ReceiptIcon /></IconButton>),
     createData(<CloseIcon style={{ color: 'red' }}/>, 'Sat, 12 July, 2018', '$204.96', <Button Button className={classes.basicVersionMember}>Basic</Button>, 'Visa 4**** **** **** 9221' ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.premiumVersionMember}>Premium</Button>, 'Visa 4**** **** **** 9221', <ReceiptIcon/> ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Sat, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221', <ReceiptIcon/> ),
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.premiumVersionMember}>Premium</Button>, 'Visa 4**** **** **** 9221', <IconButton aria-label="delete">
+    <ReceiptIcon /></IconButton> ),
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Sat, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221', <IconButton aria-label="delete">
+    <ReceiptIcon /></IconButton> ),
 
   ];
 
   return (
-    <Container maxWidth="lg">
-        <Grid container direction="row" justifyContent="center" spacing={3}>
+        <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
             <Box mt={5}>
               <Card variant="outlined">
@@ -117,35 +119,50 @@ function PaymentHistory() {
                           ))}
                         </TableBody>
                     </Table>
-                    <Box display="flex" flexWrap="wrap" flexDiretion='row' justifyContent="right" alignItems="right">
-                          <ListSubheader>Rows per page</ListSubheader>
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={rows}
-                            onChange={handleRowsChange}
-                          >
-                            <MenuItem value={10}>10</MenuItem>
-                            <MenuItem value={11}>11</MenuItem>
-                            <MenuItem value={12}>12</MenuItem>
-                            <MenuItem value={13}>13</MenuItem>
-                          </Select>
-                          <ListSubheader>1-3 of 13</ListSubheader>
-                          <List>
-                          <Box mt={0.4}>
-                            <ListItemIcon><ChevronLeftIcon /></ListItemIcon>
-                            <ListItemIcon><ChevronRightIcon style={{color: 'black'}}/></ListItemIcon>
-                          </Box>
-                          </List>
-                      </Box>
+                      
+                      <Grid container item spacing={0}>
+                          <Grid item xs>
 
+                          </Grid>
+
+                          <Grid item xs>
+
+                          </Grid>
+
+                          <Grid item xs={12} sm={6}>
+                            <Box display="flex" flexWrap="wrap" mt={3}>
+                              <Box mr={2}>
+                                <Typography variant="body1" color="textSecondary">Rows per page</Typography>
+                              </Box>
+                              <Box mr={3} mt={-0.5}>
+                                  <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={rows}
+                                    onChange={handleRowsChange}
+                                  >
+                                    <MenuItem value={10}>10</MenuItem>
+                                    <MenuItem value={11}>11</MenuItem>
+                                    <MenuItem value={12}>12</MenuItem>
+                                    <MenuItem value={13}>13</MenuItem>
+                                  </Select>
+                              </Box>
+                              <Box mr={2}>
+                                <Typography variant="body1" color="textPrimary">1-5 of 13</Typography>
+                              </Box>
+                              <Box mt={-1.5}>
+                                  <IconButton><ChevronLeftIcon /></IconButton>
+                                  <IconButton><ChevronRightIcon /></IconButton>
+                              </Box>
+                            </Box>
+                          </Grid>
+                      </Grid>
                   </TableContainer>
                 </CardContent>
               </Card>
               </Box>
           </Grid>
         </Grid>
-    </Container>
   );
 }
 

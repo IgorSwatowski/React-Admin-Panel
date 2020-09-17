@@ -87,17 +87,21 @@ function Billings() {
                       <ListItemText>Your Plan</ListItemText>
                       <Button className={classes.proVersionMember}>PRO</Button>
                     </Box>
-                    <Box mt={3} width="100%" flexWrap="wrap">
-                      <LinearProgress variant="determinate"/>
-                    </Box>
-                    <Box display="flex" flexWrap="wrap" mt={3}>
-                      <Typography variant="subtitle2" color="textSecondary">
-                        Minutes used this billing cycle
-                      </Typography>
-                      <Box mx="auto">
-                        <Typography>
+                    <Box>
+                      <Box pb={3} width="100%" flexWrap="wrap" mt={3}>
+                        <LinearProgress variant="determinate"/>
+                      </Box>
+                      <Box display="flex" mt={-2}>
+                        <Box flexGrow={1} pr={5}>
+                          <Typography variant="caption" display="block" color="textSecondary" gutterBottom>
+                            Minutes used this billing cycle
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <Typography variant="caption" display="block" gutterBottom>
                             38.9/2000.0
-                        </Typography>
+                          </Typography>
+                        </Box>
                       </Box>
                     </Box>
                     <Box mt={2}>
@@ -109,17 +113,17 @@ function Billings() {
                     </Box>
                     <Box mt={6}>
                       <ListItemText>Payment</ListItemText>
-                      <Box mt={2}>
+                      <Box>
                         <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
                       </Box>
                       <Box mt={2} mb={2}>
                         <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
                       </Box>
-                      <Box mt={2} mb={2}>
+                      <Box mt={-1} mb={2}>
                         <Typography color="textPrimary" variant="body1">Visa Ending in 0218 expiring 4/2020</Typography>
                       </Box>
                     </Box>
-                    <Box mt={3}>
+                    <Box mt={2}>
                       <Button variant="outlined" href="/card">Edit</Button>
                       <Button>Remove</Button>
                     </Box>
@@ -132,10 +136,9 @@ function Billings() {
                 </Box>
               </CardContent>
             </Card>
+            <PaymentHistory/>
           </Grid>
         </Grid>
-
-        <PaymentHistory/>
       </Container>
   );
 }
