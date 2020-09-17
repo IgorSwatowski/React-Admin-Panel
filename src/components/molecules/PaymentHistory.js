@@ -23,6 +23,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import CardHeader from '@material-ui/core/CardHeader';
+import TableFooter from '@material-ui/core/TableFooter';
+import TablePagination from '@material-ui/core/TablePagination';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -72,14 +75,27 @@ function PaymentHistory() {
   function createData( status, date, amount, offer, PaymentMethod, receipt) {
     return {status, date, amount, offer, PaymentMethod, receipt};
   }
+
+  const [page, setPage] = React.useState(0);
+  const [dense, setDense] = React.useState(false);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
   
   const rowss = [
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221' , <IconButton aria-label="delete">
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,<Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton>),
-    createData(<CloseIcon style={{ color: 'red' }}/>, 'Sat, 12 July, 2018', '$204.96', <Button Button className={classes.basicVersionMember}>Basic</Button>, 'Visa 4**** **** **** 9221' ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Thu, 12 July, 2018', '$204.96', <Button Button className={classes.premiumVersionMember}>Premium</Button>, 'Visa 4**** **** **** 9221', <IconButton aria-label="delete">
+    createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$204.96</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>,   ),
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton> ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, 'Sat, 12 July, 2018', '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, 'Visa 4**** **** **** 9221', <IconButton aria-label="delete">
+    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton> ),
 
   ];
@@ -90,25 +106,38 @@ function PaymentHistory() {
             <Box mt={5}>
               <Card variant="outlined">
                 <CardContent>
+                    <Box display="flex" flexDirection="row">
+                        <Box>
+                          <Typography variant="body1" color="textPrimary">
+                            Payment History
+                          </Typography>
+                          <Typography variant="subtitle2" color="textSecondary">
+                            See All Invoices
+                          </Typography>
+                        </Box>
+                        <Grid item xs>
+                          
+                        </Grid>
+                        <Box>
+                            <IconButton><GetAppIcon/></IconButton>
+                        </Box>
+                      </Box>
+                
                   <TableContainer>
-                  <Box p={2} display="flex" flexDirection="row">
-                    <ListItemText primary="Payment History" secondary="See all invoices"/>
-                    <ListItemIcon><GetAppIcon/></ListItemIcon>
-                    </Box>
-                      <Table size="small" aria-label="a dense table">
-                        <TableHead>
+                    <Table size="small" aria-label="a dense table" padding="none">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell></TableCell>
+                          <TableCell>Date</TableCell>
+                          <TableCell>Amount</TableCell>
+                          <TableCell>Plan</TableCell>
+                          <TableCell>Payment Method</TableCell>
+                          <TableCell></TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rowss.map((rowss) => (
                           <TableRow>
-                            <TableCell></TableCell>
-                            <TableCell>Date</TableCell>
-                            <TableCell>Amount</TableCell>
-                            <TableCell>Plan</TableCell>
-                            <TableCell>Payment Method</TableCell>
-                            <TableCell></TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>
-                          {rowss.map((rowss) => (
-                          <TableRow >
                             <TableCell>{rowss.status}</TableCell>
                             <TableCell>{rowss.date}</TableCell>
                             <TableCell>{rowss.amount}</TableCell>
@@ -116,47 +145,18 @@ function PaymentHistory() {
                             <TableCell>{rowss.PaymentMethod}</TableCell>
                             <TableCell>{rowss.receipt}</TableCell>
                           </TableRow>
-                          ))}
-                        </TableBody>
+                        ))}
+                      </TableBody>
                     </Table>
-                      
-                      <Grid container item spacing={0}>
-                          <Grid item xs>
-
-                          </Grid>
-
-                          <Grid item xs>
-
-                          </Grid>
-
-                          <Grid item xs={12} sm={6}>
-                            <Box display="flex" flexWrap="wrap" mt={3}>
-                              <Box mr={2}>
-                                <Typography variant="body1" color="textSecondary">Rows per page</Typography>
-                              </Box>
-                              <Box mr={3} mt={-0.5}>
-                                  <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={rows}
-                                    onChange={handleRowsChange}
-                                  >
-                                    <MenuItem value={10}>10</MenuItem>
-                                    <MenuItem value={11}>11</MenuItem>
-                                    <MenuItem value={12}>12</MenuItem>
-                                    <MenuItem value={13}>13</MenuItem>
-                                  </Select>
-                              </Box>
-                              <Box mr={2}>
-                                <Typography variant="body1" color="textPrimary">1-5 of 13</Typography>
-                              </Box>
-                              <Box mt={-1.5}>
-                                  <IconButton><ChevronLeftIcon /></IconButton>
-                                  <IconButton><ChevronRightIcon /></IconButton>
-                              </Box>
-                            </Box>
-                          </Grid>
-                      </Grid>
+                    <TablePagination
+                        rowsPerPageOptions={[5, 10, 25]}
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onChangePage={handleChangePage}
+                        onChangeRowsPerPage={handleChangeRowsPerPage}
+                      />
                   </TableContainer>
                 </CardContent>
               </Card>
