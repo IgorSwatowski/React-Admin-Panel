@@ -1,17 +1,11 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import {ListItemIcon} from "@material-ui/core";
-import {ListItemText} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import MenuItem from '@material-ui/core/MenuItem';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import DoneIcon from '@material-ui/icons/Done';
 import CloseIcon from '@material-ui/icons/Close';
 import ReceiptIcon from '@material-ui/icons/Receipt';
-import Select from '@material-ui/core/Select';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -23,8 +17,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CardHeader from '@material-ui/core/CardHeader';
-import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 
 
@@ -69,15 +61,13 @@ function PaymentHistory() {
 
   const classes = useStyles();
 
-  const [rows, setRows] = React.useState('10');
-  const handleRowsChange = event => setRows(event.target.value);
+  const [rows] = React.useState('10');
 
   function createData( status, date, amount, offer, PaymentMethod, receipt) {
     return {status, date, amount, offer, PaymentMethod, receipt};
   }
 
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleChangePage = (event, newPage) => {
