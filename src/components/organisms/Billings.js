@@ -1,7 +1,5 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from '@material-ui/core/styles';
-import {ListItemText} from "@material-ui/core";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
@@ -14,38 +12,10 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Chip from '@material-ui/core/Chip';
 
-
 import PaymentHistory from 'components/molecules/PaymentHistory.js';
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    }},
-  proVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
-    color: '#0B79D0',
-    borderRadius: '55px',
-    fontSize: '12px',
-  },
-  premiumVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #4CAF50',
-    color: '#4CAF50',
-    borderRadius: '55px',
-    fontSize: '12px',
-  },
-  basicVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #F44336;',
-    color: '#F44336',
-    borderRadius: '55px',
-    fontSize: '12px',
-  }
-}));
-
 function Billings() {
-  const classes = useStyles();
 
   return (
       <Container maxWidth="lg">
@@ -111,9 +81,9 @@ function Billings() {
                     </Box>
                     <Box>
                       <Box component="span" mr={2}>
-                        <Button variant="outlined">Change</Button>
+                        <Button variant="outlined" size="large">Change</Button>
                       </Box>
-                      <Button>Cancel Subscription</Button>
+                      <Button size="large">Cancel Subscription</Button>
                     </Box>
                     <Box my={5}>
                       <Divider/>
@@ -130,9 +100,9 @@ function Billings() {
                     </Box>
                     <Box>
                       <Box component="span" mr={2}>
-                        <Button variant="outlined">Edit</Button>
+                        <Button variant="outlined" size="large">Edit</Button>
                       </Box>
-                      <Button>Remove</Button>
+                      <Button size="large">Remove</Button>
                     </Box>
                   </Grid>
                   <Grid item xs>

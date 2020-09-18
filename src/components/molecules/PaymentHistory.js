@@ -19,47 +19,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import Chip from '@material-ui/core/Chip';
 
 import { green } from '@material-ui/core/colors';
-<<<<<<< HEAD
 import { blue } from '@material-ui/core/colors';
 import { red } from '@material-ui/core/colors';
-=======
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-  proVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
-    color: '#0B79D0',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  },
-  premiumVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #4CAF50',
-    color: '#4CAF50',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  },
-  basicVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #F44336;',
-    color: '#F44336',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  }
-}));
->>>>>>> 0dd2adf0548719dc3f589c222574a107d73c87ee
 
 
 function PaymentHistory() {
@@ -85,7 +46,6 @@ function PaymentHistory() {
   const rowss = [
     createData(<DoneIcon fontSize="inherit" style={{ color: green[500] }} />,
     <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', 
-<<<<<<< HEAD
     <Chip size="small" label="PRO" style={{ background: blue[100], color: blue[500] }}/>, 
     <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, 
     <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>),
@@ -107,16 +67,6 @@ function PaymentHistory() {
     <Chip size="small" label="PRO" style={{ background: blue[100], color: blue[500] }}/>, 
     <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, 
     <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>)
-=======
-    <Chip size="small" label="PRO" />, 
-    <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, 
-    <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>),
-    createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$408.62</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221 </Typography>,   ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$260.04', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton> ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, '$699.45', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton> ),
->>>>>>> 0dd2adf0548719dc3f589c222574a107d73c87ee
 
   ];
 
@@ -127,7 +77,6 @@ function PaymentHistory() {
               <Card variant="outlined">
                 <CardContent>
                   <Box display="flex" flexDirection="row">
-<<<<<<< HEAD
                       <Box flexGrow={1}>
                         <Typography variant="body1" color="textPrimary">
                           Payment History
@@ -141,20 +90,6 @@ function PaymentHistory() {
                         </Box>
 
                       </Box>
-=======
-                    <Box flexGrow={1}>
-                      <Typography variant="body1" color="textPrimary">
-                        Payment History
-                      </Typography>
-                      <Typography variant="subtitle2" color="textSecondary">
-                        See All Invoices
-                      </Typography>
-                    </Box>
-                      <Box>
-                          <IconButton><GetAppIcon/></IconButton>
-                      </Box>
-                    </Box>
->>>>>>> 0dd2adf0548719dc3f589c222574a107d73c87ee
                   </CardContent>
                   <TableContainer>
                     <Table size="small" aria-label="a dense table">
@@ -191,15 +126,11 @@ function PaymentHistory() {
                         onChangeRowsPerPage={handleChangeRowsPerPage}
                       />
                   </TableContainer>
-<<<<<<< HEAD
-=======
-                
->>>>>>> 0dd2adf0548719dc3f589c222574a107d73c87ee
-              </Card>
+                  </Card>
               </Box>
           </Grid>
         </Grid>
-  );
-}
+          );
+        }
 
 export default PaymentHistory;
