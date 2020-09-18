@@ -18,7 +18,9 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import TablePagination from '@material-ui/core/TablePagination';
+import Chip from '@material-ui/core/Chip';
 
+import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,8 +82,11 @@ function PaymentHistory() {
   };
   
   const rowss = [
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,<Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton>),
+    createData(<DoneIcon fontSize="inherit" style={{ color: green[500] }} />,
+    <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', 
+    <Chip size="small" label="PRO" />, 
+    <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, 
+    <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>),
     createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$408.62</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221 </Typography>,   ),
     createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$260.04', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
     <ReceiptIcon /></IconButton> ),
@@ -96,25 +101,22 @@ function PaymentHistory() {
             <Box mt={5}>
               <Card variant="outlined">
                 <CardContent>
-                    <Box display="flex" flexDirection="row">
-                        <Box>
-                          <Typography variant="body1" color="textPrimary">
-                            Payment History
-                          </Typography>
-                          <Typography variant="subtitle2" color="textSecondary">
-                            See All Invoices
-                          </Typography>
-                        </Box>
-                        <Grid item xs>
-                          
-                        </Grid>
-                        <Box>
-                            <IconButton><GetAppIcon/></IconButton>
-                        </Box>
+                  <Box display="flex" flexDirection="row">
+                    <Box flexGrow={1}>
+                      <Typography variant="body1" color="textPrimary">
+                        Payment History
+                      </Typography>
+                      <Typography variant="subtitle2" color="textSecondary">
+                        See All Invoices
+                      </Typography>
+                    </Box>
+                      <Box>
+                          <IconButton><GetAppIcon/></IconButton>
                       </Box>
-                
+                    </Box>
+                  </CardContent>
                   <TableContainer>
-                    <Table size="small" aria-label="a dense table" padding="none">
+                    <Table size="small" aria-label="a dense table">
                       <TableHead>
                         <TableRow>
                           <TableCell></TableCell>
@@ -148,7 +150,7 @@ function PaymentHistory() {
                         onChangeRowsPerPage={handleChangeRowsPerPage}
                       />
                   </TableContainer>
-                </CardContent>
+                
               </Card>
               </Box>
           </Grid>
