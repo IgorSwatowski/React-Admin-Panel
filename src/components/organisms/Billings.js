@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Chip from '@material-ui/core/Chip';
 
 
 import PaymentHistory from 'components/molecules/PaymentHistory.js';
@@ -83,12 +84,16 @@ function Billings() {
                       
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Box display="flex" flexDirection="row">
-                      <ListItemText>Your Plan</ListItemText>
-                      <Button className={classes.proVersionMember}>PRO</Button>
+                    <Box display="flex" flexDirection="row" mb={2}>
+                      <Box flexGrow={1}>
+                        <Typography>
+                          Your Plan
+                        </Typography>
+                      </Box>
+                      <Chip size="small" label="PRO" />
                     </Box>
-                    <Box>
-                      <Box pb={3} width="100%" flexWrap="wrap" mt={3}>
+                    <Box mb={2}>
+                      <Box pb={3} width="100%" flexWrap="wrap">
                         <LinearProgress variant="determinate"/>
                       </Box>
                       <Box display="flex" mt={-2}>
@@ -104,27 +109,29 @@ function Billings() {
                         </Box>
                       </Box>
                     </Box>
-                    <Box mt={2}>
-                      <Button variant="outlined">Change</Button>
+                    <Box>
+                      <Box component="span" mr={2}>
+                        <Button variant="outlined">Change</Button>
+                      </Box>
                       <Button>Cancel Subscription</Button>
                     </Box>
-                    <Box mt={5}>
+                    <Box my={5}>
                       <Divider/>
                     </Box>
-                    <Box mt={6}>
-                      <ListItemText>Payment</ListItemText>
-                      <Box>
-                        <Typography color="textSecondary" variant="subtitle1">You can use a Credit Card or a bank Account.</Typography>
+                    <Box>
+                      <Box mb={2}>
+                        <Typography>Payment</Typography>
+                        <Typography color="textSecondary" variant="body2">You can use a Credit Card or a bank Account.</Typography>
                       </Box>
-                      <Box mt={2} mb={2}>
-                        <Typography color="textSecondary" variant="subtitle2" >Payment Method on file</Typography>
-                      </Box>
-                      <Box mt={-1} mb={2}>
+                      <Box mb={3}>
+                        <Typography color="textSecondary" variant="caption">Payment Method on file</Typography>
                         <Typography color="textPrimary" variant="body1">Visa Ending in 0218 expiring 4/2020</Typography>
                       </Box>
                     </Box>
-                    <Box mt={2}>
-                      <Button variant="outlined" href="/card">Edit</Button>
+                    <Box>
+                      <Box component="span" mr={2}>
+                        <Button variant="outlined">Edit</Button>
+                      </Box>
                       <Button>Remove</Button>
                     </Box>
                   </Grid>
