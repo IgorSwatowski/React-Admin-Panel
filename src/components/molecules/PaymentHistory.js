@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import GetAppIcon from '@material-ui/icons/GetApp';
 import DoneIcon from '@material-ui/icons/Done';
@@ -18,48 +16,14 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import TablePagination from '@material-ui/core/TablePagination';
+import Chip from '@material-ui/core/Chip';
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-  proVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #2196F3', 
-    color: '#0B79D0',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  },
-  premiumVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #4CAF50',
-    color: '#4CAF50',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  },
-  basicVersionMember: {
-    background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #F44336;',
-    color: '#F44336',
-    borderRadius: '55px',
-    fontSize: '12px',
-    padding: '0px',
-    marginLeft: '-10px',
-    marginRight: '-10px'
-  }
-}));
+import { green } from '@material-ui/core/colors';
+import { blue } from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
 
 
 function PaymentHistory() {
-
-  const classes = useStyles();
 
   const [rows] = React.useState('10');
 
@@ -80,13 +44,29 @@ function PaymentHistory() {
   };
   
   const rowss = [
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>,<Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton>),
-    createData(<CloseIcon style={{ color: 'red' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, <Typography variant="body2" color="textSecondary">$408.62</Typography>, <Button Button className={classes.basicVersionMember}>Basic</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221 </Typography>,   ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$260.04', <Button Button className={classes.premiumVersionMember}>Premium</Button>, <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton> ),
-    createData(<DoneIcon style={{ color: '#4CAF50' }}/>, <Typography variant="body2" color="textSecondary">Sat, 12 July, 2018</Typography>, '$699.45', <Button Button className={classes.proVersionMember}>PRO</Button>, <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, <IconButton aria-label="delete" size="small">
-    <ReceiptIcon /></IconButton> ),
+    createData(<DoneIcon fontSize="inherit" style={{ color: green[500] }} />,
+    <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$204.96', 
+    <Chip size="small" label="PRO" style={{ background: blue[100], color: blue[500] }}/>, 
+    <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, 
+    <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>),
+
+    createData(<CloseIcon fontSize="inherit" style={{ color: red[500] }} />,
+    <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$408.62', 
+    <Chip size="small" label="BASIC" style={{ background: red[100], color: red[500]}} />, 
+    <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, 
+    <IconButton aria-label="delete" size="small"></IconButton>),
+
+    createData(<DoneIcon fontSize="inherit" style={{ color: green[500] }} />,
+    <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$260.96', 
+    <Chip size="small" label="PREMIUM" style={{ background: green[100], color: green[500] }}/>, 
+    <Typography variant="body2" color="textSecondary">Visa 4**** **** **** 9221</Typography>, 
+    <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>),
+
+    createData(<DoneIcon fontSize="inherit" style={{ color: green[500] }} />,
+    <Typography variant="body2" color="textSecondary">Thu, 12 July, 2018</Typography>, '$699.45', 
+    <Chip size="small" label="PRO" style={{ background: blue[100], color: blue[500] }}/>, 
+    <Typography variant="body2" color="textSecondary">Bank Account 3**** 9221</Typography>, 
+    <IconButton aria-label="delete" size="small"><ReceiptIcon fontSize="inherit" /></IconButton>)
 
   ];
 
@@ -96,25 +76,23 @@ function PaymentHistory() {
             <Box mt={5}>
               <Card variant="outlined">
                 <CardContent>
-                    <Box display="flex" flexDirection="row">
-                        <Box>
-                          <Typography variant="body1" color="textPrimary">
-                            Payment History
-                          </Typography>
-                          <Typography variant="subtitle2" color="textSecondary">
-                            See All Invoices
-                          </Typography>
-                        </Box>
-                        <Grid item xs>
-                          
-                        </Grid>
+                  <Box display="flex" flexDirection="row">
+                      <Box flexGrow={1}>
+                        <Typography variant="body1" color="textPrimary">
+                          Payment History
+                        </Typography>
+                        <Typography variant="subtitle2" color="textSecondary">
+                          See All Invoices
+                        </Typography>
+                      </Box>
                         <Box>
                             <IconButton><GetAppIcon/></IconButton>
                         </Box>
+
                       </Box>
-                
+                  </CardContent>
                   <TableContainer>
-                    <Table size="small" aria-label="a dense table" padding="none">
+                    <Table size="small" aria-label="a dense table">
                       <TableHead>
                         <TableRow>
                           <TableCell></TableCell>
@@ -148,7 +126,6 @@ function PaymentHistory() {
                         onChangeRowsPerPage={handleChangeRowsPerPage}
                       />
                   </TableContainer>
-                </CardContent>
               </Card>
               </Box>
           </Grid>
