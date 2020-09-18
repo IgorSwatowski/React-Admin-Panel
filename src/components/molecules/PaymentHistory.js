@@ -120,7 +120,7 @@ function PaymentHistory() {
                           <TableCell></TableCell>
                           <TableCell>Date</TableCell>
                           <TableCell>Amount</TableCell>
-                          <TableCell>Plan</TableCell>
+                          <TableCell align="left">Plan</TableCell>
                           <TableCell>Payment Method</TableCell>
                           <TableCell></TableCell>
                         </TableRow>
@@ -128,12 +128,12 @@ function PaymentHistory() {
                       <TableBody>
                         {rowss.map((rowss) => (
                           <TableRow>
-                            <TableCell>{rowss.status}</TableCell>
+                            <TableCell align="left">{rowss.status}</TableCell>
                             <TableCell>{rowss.date}</TableCell>
                             <TableCell>{rowss.amount}</TableCell>
                             <TableCell>{rowss.offer}</TableCell>
                             <TableCell>{rowss.PaymentMethod}</TableCell>
-                            <TableCell>{rowss.receipt}</TableCell>
+                            <TableCell align="right">{rowss.receipt}</TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
