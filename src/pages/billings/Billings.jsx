@@ -12,8 +12,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Chip from '@material-ui/core/Chip';
 
-import PaymentHistory from 'components/molecules/PaymentHistory.js';
-import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
+import PaymentHistory from './components/PaymentHistory';
+import CollapseSidebarUserItems from 'pages/profiledit/components/CollapseSidebarUserItems';
 
 function Billings() {
 

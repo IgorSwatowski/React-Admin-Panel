@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core';
 
 //Components ================================
-import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
+import CollapseSidebarUserItems from './components/CollapseSidebarUserItems';
 
 const countries = [
   {

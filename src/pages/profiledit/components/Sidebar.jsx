@@ -25,7 +25,7 @@ import SaveAltRoundedIcon from '@material-ui/icons/SaveAltRounded';
 import Avatar from "@material-ui/core/Avatar";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import CollapseSidebarUserItem from "components/atoms/CollapseSidebarUserItems.js";
+import CollapseSidebarUserItems from "./CollapseSidebarUserItems";
 import PowerSettingsNewRoundedIcon from '@material-ui/icons/PowerSettingsNewRounded';
 import Collapse from "@material-ui/core/Collapse";
 import PolymerRoundedIcon from '@material-ui/icons/PolymerRounded';
@@ -215,7 +215,7 @@ export default function PersistentDrawerLeft() {
           </ListItem>
 
           <Collapse in={open}>
-            <CollapseSidebarUserItem/>
+            <CollapseSidebarUserItems />
           </Collapse>
         </List>
 

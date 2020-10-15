@@ -18,7 +18,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent'
 
 
-import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
+import CollapseSidebarUserItems from 'pages/profiledit/components/CollapseSidebarUserItems';
 
 function CardBilling() {
 

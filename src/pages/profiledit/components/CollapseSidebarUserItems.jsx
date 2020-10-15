@@ -5,7 +5,7 @@ import { routes } from "routes/index.js";
 import { Link } from "react-router-dom";
 
 
-function CollapseSidebarUserItem() {
+function CollapseSidebarUserItems() {
 
   return (
             <Tabs
@@ -41,4 +41,4 @@ function CollapseSidebarUserItem() {
   );
 }
 
-export default CollapseSidebarUserItem;
+export default CollapseSidebarUserItems;
