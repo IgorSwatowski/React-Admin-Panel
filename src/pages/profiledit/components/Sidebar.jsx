@@ -1,36 +1,43 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from "@material-ui/core/ListSubheader";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import PeopleIcon from "@material-ui/icons/People";
-import FolderOpenIcon from "@material-ui/icons/FolderOpen";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
-import SaveAltRoundedIcon from '@material-ui/icons/SaveAltRounded';
-import Avatar from "@material-ui/core/Avatar";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import CollapseSidebarUserItems from "./CollapseSidebarUserItems";
-import PowerSettingsNewRoundedIcon from '@material-ui/icons/PowerSettingsNewRounded';
-import Collapse from "@material-ui/core/Collapse";
-import PolymerRoundedIcon from '@material-ui/icons/PolymerRounded';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import {
+  Drawer,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  List,
+  Typography,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  ListItemAvatar,
+  Avatar,
+  Collapse,
+} from '@material-ui/core';
 
+//Icons ========================================
+import {
+  Menu as MenuIcon,
+  ChevronLeft as ChevronLeftIcon,
+  ChevronRight as ChevronRightIcon,
+  Dashboard as DashboardIcon,
+  People as PeopleIcon,
+  FolderOpen as FolderOpenIcon,
+  CalendarToday as CalendarTodayIcon,
+  InsertDriveFile as InsertDriveFileIcon,
+  SaveAltRounded as SaveAltRoundedIcon,
+  ExpandLess as ExpandLessIcon,
+  ExpandMore as ExpandMoreIcon,
+  PowerSettingsNewRounded as PowerSettingsNewRoundedIcon,
+  PolymerRounded as PolymerRoundedIcon,
+} from '@material-ui/icons';
+
+//Components ========================================
+import CollapseSidebarUserItems from "./CollapseSidebarUserItems";
 
 const drawerWidth = 240;
 
@@ -211,7 +218,7 @@ export default function PersistentDrawerLeft() {
               <Avatar />
             </ListItemIcon>
             <ListItemText primary={"John Doe"} secondary={"UI Developer"} />
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItem>
 
           <Collapse in={open}>
