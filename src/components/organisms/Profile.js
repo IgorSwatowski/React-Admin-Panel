@@ -1,19 +1,21 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import TextField from '@material-ui/core/TextField';
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import MenuItem from '@material-ui/core/MenuItem';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import {
+  Avatar,
+  TextField,
+  Breadcrumbs,
+  Button,
+  Box,
+  Container,
+  Card,
+  CardContent,
+  MenuItem,
+  LinearProgress,
+  Typography,
+  Grid,
+} from '@material-ui/core';
 
+//Components ================================
 import CollapseSidebarUserItems from 'components/atoms/CollapseSidebarUserItems.js';
-
 
 const countries = [
   {
@@ -27,7 +29,7 @@ const countries = [
   }
 ];
 
-function MultilineTextFields() {
+function Profile() {
 
   const [valueFirstName, setValueFirstName] = React.useState('John');
   const [valueLastName, setValueLastName] = React.useState('Doe');
@@ -194,4 +196,4 @@ function MultilineTextFields() {
   );
 }
 
-export default MultilineTextFields;
+export default Profile;
