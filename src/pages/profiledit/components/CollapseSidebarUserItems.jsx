@@ -1,6 +1,8 @@
 import React  from "react";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import {
+  Tab,
+  Tabs,
+} from '@material-ui/core';
 import { routes } from "routes/index.js";
 import { Link } from "react-router-dom";
 

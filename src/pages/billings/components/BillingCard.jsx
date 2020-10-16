@@ -1,23 +1,28 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import MenuItem from '@material-ui/core/MenuItem';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent'
+import {
+  Avatar,
+  Breadcrumbs,
+  Button,
+  Box,
+  Container,
+  Divider,
+  MenuItem,
+  FormControl,
+  InputAdornment,
+  OutlinedInput,
+  Select,
+  TextField,
+  Grid,
+  Card,
+  CardContent,
+} from '@material-ui/core';
 
+//Icons ==============================
+import {
+  CreditCard as CreditCardIcon,
+} from '@material-ui/icons';
 
+//Components ==============================
 import CollapseSidebarUserItems from 'pages/profiledit/components/CollapseSidebarUserItems';
 
 function CardBilling() {
