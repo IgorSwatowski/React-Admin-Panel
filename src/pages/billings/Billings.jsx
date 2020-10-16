@@ -1,6 +1,6 @@
 import React from "react";
+import {useHistory} from "react-router";
 import {
-  Avatar,
   Breadcrumbs,
   Button,
   Box,
@@ -8,118 +8,103 @@ import {
   Divider,
   LinearProgress,
   Typography,
-  Grid,
   Card,
   CardContent,
   Chip,
+  Link,
+  Avatar,
 } from '@material-ui/core';
 
-//Components ==================================
-import PaymentHistory from './components/PaymentHistory';
-import CollapseSidebarUserItems from 'pages/profiledit/components/CollapseSidebarUserItems';
+import { ProfileNavigation } from "../profiledit/components/ProfileNavigation";
+import { UserInfoBox, UsageInfoBox } from '../../styledComponents';
+import {useStyles} from '../../styledComponents/stylesGrid.js';
+import PaymentHistory from './components/PaymentHistory.jsx';
 
-function Billings() {
-
+function Billings(props) {
+  const classes = useStyles(props);
+  const history = useHistory();
+  const routeChange = (path) => {
+    history.push(path);
+  }
   return (
-      <Container maxWidth="lg">
-        <Box display="flex" flexWrap="wrap" mt={15} pb={2}>
-          <Box display="flex" flexGrow={1} alignItems="center" css={{ height: 100 }}>
-            <Box p={1} mt={1}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>            
-            </Box>
+    <Box>
+      <Container maxWidth="lg" className={classes.container}>
+        <UserInfoBox className={classes.userInfo}>
+          <Avatar alt="Remy Sharp" />
+                <Box className={classes.userInfoContent}>
+                    <Breadcrumbs aria-label="breadcrumb">
+                      <Link
+                        component="button"
+                        variant="body2"
+                        color="primary"
+                        onClick={() => routeChange('/apps/profile/profile')}>
+                          <Typography variant="h6">
+                            John Doe
+                          </Typography>
+                      </Link>
+                        <Typography variant="h6" color="textPrimary">
+                            Billing
+                        </Typography>
+                    </Breadcrumbs>
 
-            <Box p={1}>
-              <Breadcrumbs aria-label="breadcrumb">
-                  <Typography variant="h6" display="block" color="textSecondary">
-                    John Doe
-                  </Typography>
-                  <Typography variant="h6" color="textPrimary">
-                    Billing
-                  </Typography>
-              </Breadcrumbs>
-              <Typography variant="body1" color="textSecondary">
-                  Manage billing information and view receipts
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+                    <Typography variant="body1">
+                      Manage billing information and view receipts
+                    </Typography>
+                </Box>
+            </UserInfoBox>
 
-        <Grid container direction="row" justifyContent="center" spacing={0}>
-          <Grid item xs={12} sm={2}>
-            <CollapseSidebarUserItems/>
-          </Grid>
-          <Grid item xs={12} sm={10}>
-            <Card variant="outlined">
-              <CardContent>
-                <Box p={5}>
-                <Grid container spacing={3}>
-                  <Grid item xs>
-                      
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Box display="flex" flexDirection="row" mb={2}>
-                      <Box flexGrow={1}>
+            { /* Navigation */}
+            <ProfileNavigation className={classes.menu} />
+
+            { /* Content */}
+            <Card variant="outlined" className={classes.content}>
+                <CardContent className={classes.contentInner}>
+                    <Box display="flex" flexDirection="row">
+                      <Box flexGrow={1} pb={2}>
                         <Typography>
                           Your Plan
                         </Typography>
                       </Box>
                       <Chip size="small" label="PRO" />
                     </Box>
-                    <Box mb={2}>
-                      <Box pb={3} width="100%" flexWrap="wrap">
-                        <LinearProgress variant="determinate"/>
-                      </Box>
-                      <Box display="flex" mt={-2}>
-                        <Box flexGrow={1} pr={5}>
-                          <Typography variant="caption" display="block" color="textSecondary" gutterBottom>
-                            Minutes used this billing cycle
-                          </Typography>
+                    { /* Usage Info */}
+                    <UsageInfoBox className={classes.usageInfo}>
+                        <LinearProgress variant="determinate" value={ 100 } />
+
+                        <Box className={classes.usageInfoContent}>
+                            <Typography variant="caption" color="textSecondary">
+                                Minutes used this billing cycle
+                            </Typography>
+
+                            <Typography variant="caption" gutterBottom>
+                                38.9/2000.0
+                            </Typography>
                         </Box>
-                        <Box>
-                          <Typography variant="caption" display="block" gutterBottom>
-                            38.9/2000.0
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Box>
-                    <Box>
-                      <Box component="span" mr={2}>
+                    </UsageInfoBox>
+                    <Box className={classes.flexDirectionRow} mt={2}>
                         <Button variant="outlined" size="large">Change</Button>
+                        <Button size="large">Cancel Subscription</Button>
                       </Box>
-                      <Button size="large">Cancel Subscription</Button>
-                    </Box>
-                    <Box my={5}>
-                      <Divider/>
-                    </Box>
-                    <Box>
-                      <Box mb={2}>
+                      <Box mt={5}>
+                        <Divider/>
+                      </Box>
+                      <Box mt={3}>
                         <Typography>Payment</Typography>
                         <Typography color="textSecondary" variant="body2">You can use a Credit Card or a bank Account.</Typography>
                       </Box>
-                      <Box mb={3}>
+                      <Box mt={3}>
                         <Typography color="textSecondary" variant="caption">Payment Method on file</Typography>
                         <Typography color="textPrimary" variant="body1">Visa Ending in 0218 expiring 4/2020</Typography>
                       </Box>
-                    </Box>
-                    <Box>
-                      <Box component="span" mr={2}>
-                        <Button variant="outlined" size="large">Edit</Button>
+                      <Box className={classes.flexDirectionRow} mt={3}>
+                        <Button variant="outlined" size="large" onClick={() => routeChange('/apps/profiledit/billings/card')}>Edit</Button>
+                        <Button size="large">Remove</Button>
                       </Box>
-                      <Button size="large">Remove</Button>
-                    </Box>
-                  </Grid>
-                  <Grid item xs>
-                      
-                  </Grid>
-
-                </Grid>
-                </Box>
-              </CardContent>
+                </CardContent>
             </Card>
-            <PaymentHistory/>
-          </Grid>
-        </Grid>
       </Container>
+      <PaymentHistory/>
+    </Box>
   );
 }
 
