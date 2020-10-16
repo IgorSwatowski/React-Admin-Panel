@@ -18,23 +18,23 @@ export const ProfileNavigation = ({ className }) => (
     >
         <TabLink
             label="Profile Edit"
-            to="/apps/profiledit/profileedit"
+            to="/profile"
         />
         <TabLink
             label="Billing Edit"
-            to="/apps/profiledit/billings/billing"
+            to="/billings"
         />
         <TabLink
             label="Account Edit"
-            to="/apps/profiledit/accountedit"
+            to="/accountedit"
         />
         <TabLink
             label="Settings Edit"
-            to="/apps/profiledit/settingsedit"
+            to="/settingsedit"
         />
         <TabLink
             label="Sessions"
-            to="/apps/profiledit/sessions"
+            to="/sessions"
         />
     </Tabs>
 );

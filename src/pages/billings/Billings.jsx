@@ -37,7 +37,7 @@ function Billings(props) {
                         component="button"
                         variant="body2"
                         color="primary"
-                        onClick={() => routeChange('/apps/profile/profile')}>
+                        onClick={() => routeChange('/profile')}>
                           <Typography variant="h6">
                             John Doe
                           </Typography>
@@ -97,7 +97,7 @@ function Billings(props) {
                         <Typography color="textPrimary" variant="body1">Visa Ending in 0218 expiring 4/2020</Typography>
                       </Box>
                       <Box className={classes.flexDirectionRow} mt={3}>
-                        <Button variant="outlined" size="large" onClick={() => routeChange('/apps/profiledit/billings/card')}>Edit</Button>
+                        <Button variant="outlined" size="large" onClick={() => routeChange('/card')}>Edit</Button>
                         <Button size="large">Remove</Button>
                       </Box>
                 </CardContent>
