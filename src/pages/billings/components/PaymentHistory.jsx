@@ -1,23 +1,30 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
-import GetAppIcon from '@material-ui/icons/GetApp';
-import DoneIcon from '@material-ui/icons/Done';
-import CloseIcon from '@material-ui/icons/Close';
-import ReceiptIcon from '@material-ui/icons/Receipt';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import TablePagination from '@material-ui/core/TablePagination';
-import Chip from '@material-ui/core/Chip';
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+  TablePagination,
+  Chip,
+  IconButton,
+} from '@material-ui/core';
 
+//Icons ==================================
+import {
+  GetApp as GetAppIcon,
+  Done as DoneIcon,
+  Close as CloseIcon,
+  Receipt as ReceiptIcon,
+} from '@material-ui/icons';
+
+//Colors =================================
 import { green } from '@material-ui/core/colors';
 import { blue } from '@material-ui/core/colors';
 import { red } from '@material-ui/core/colors';

@@ -8,13 +8,14 @@ import {
   Divider,
   MenuItem,
   FormControl,
-  InputAdornment,
+  InputLabel,
   OutlinedInput,
   Select,
   TextField,
   Grid,
   Card,
   CardContent,
+  Typography,
 } from '@material-ui/core';
 
 //Icons ==============================

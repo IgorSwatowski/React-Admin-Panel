@@ -1,17 +1,20 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Chip from '@material-ui/core/Chip';
+import {
+  Avatar,
+  Breadcrumbs,
+  Button,
+  Box,
+  Container,
+  Divider,
+  LinearProgress,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Chip,
+} from '@material-ui/core';
 
+//Components ==================================
 import PaymentHistory from './components/PaymentHistory';
 import CollapseSidebarUserItems from 'pages/profiledit/components/CollapseSidebarUserItems';
 
